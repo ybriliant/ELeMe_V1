@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ELeMe</string>
+    <string name="search">发现</string>
+    <string name="find_more">查看更多></string>
 </resources>
