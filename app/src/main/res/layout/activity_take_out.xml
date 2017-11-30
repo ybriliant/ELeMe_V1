@@ -39,7 +39,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:background="@drawable/backcolor">
                     <TextView
                         android:layout_width="50dp"
                         android:layout_height="match_parent"
@@ -70,8 +71,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:background="@color/blue"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:background="@drawable/backcolor">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -91,7 +92,7 @@
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_collapseMode="pin">
+                app:layout_collapseMode="none">
             </android.support.v7.widget.Toolbar>
 
         </android.support.design.widget.CollapsingToolbarLayout>
@@ -105,18 +106,14 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/img5"/>
+                android:src="@drawable/img1"/>
 
-            <com.jude.rollviewpager.RollPagerView
-                android:id="@+id/order_roll_view_pager"
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                app:rollviewpager_play_delay="3000"/>
+            <include layout="@layout/lunbo"></include>
             <!--<android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -130,12 +127,12 @@
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
-    <android.support.design.widget.FloatingActionButton
+    <!--<android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:src="@mipmap/ic_launcher"
         app:layout_anchor="@id/appBar"
-        app:layout_anchorGravity="bottom|end"/>
+        app:layout_anchorGravity="bottom|end"/>-->
 
 </android.support.design.widget.CoordinatorLayout>
