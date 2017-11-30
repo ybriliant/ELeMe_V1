@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ELeMe.iml" filepath="$PROJECT_DIR$/ELeMe.iml" />
-      <module fileurl="file://D:\AndroidProjections\ELeMe\ELeMey.iml" filepath="D:\AndroidProjections\ELeMe\ELeMey.iml" />
-      <module fileurl="file://E:\ELeMey\NewELeMe.iml" filepath="E:\ELeMey\NewELeMe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewELeMe.iml" filepath="$PROJECT_DIR$/NewELeMe.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
