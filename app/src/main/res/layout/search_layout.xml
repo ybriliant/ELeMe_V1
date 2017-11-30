@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:background="@color/blue"
+        android:background="@drawable/backcolor"
         android:text="@string/search"
         android:layout_width="match_parent"
         android:layout_height="57dp"
@@ -21,7 +21,7 @@
             <LinearLayout
                 android:baselineAligned="false"
                 android:layout_width="match_parent"
-                android:layout_height="210dp"
+                android:layout_height="240dp"
                 android:orientation="horizontal">
                 <LinearLayout
                     android:orientation="vertical"
@@ -29,14 +29,17 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
                     <Button
+                        android:background="@drawable/jbsc"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"/>
                     <Button
+                        android:background="@drawable/bcbl"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"/>
                     <Button
+                        android:background="@drawable/zbyh"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"/>
@@ -47,35 +50,40 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1">
                     <Button
+                        android:background="@drawable/yhbkq"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"/>
                     <Button
+                        android:background="@drawable/tjyj"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"/>
                     <Button
+                        android:background="@drawable/mfll"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"/>
                 </LinearLayout>
             </LinearLayout>
             <ImageView
+                android:background="@drawable/redimage"
                 android:layout_width="match_parent"
                 android:layout_height="80dp" />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="250dp"
                 android:orientation="vertical">
                 <ImageView
+                    android:background="@drawable/msrt"
                     android:layout_width="match_parent"
                     android:layout_height="00dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="2"/>
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="3">
+                    android:layout_weight="4">
                     <com.example.ggb.eleme.xd.ImageButton
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -92,22 +100,23 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="1.5"
                     android:text="@string/find_more"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="250dp"
                 android:orientation="vertical">
                 <ImageView
+                    android:background="@drawable/tttj"
                     android:layout_width="match_parent"
                     android:layout_height="00dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="2"/>
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="3">
+                    android:layout_weight="4">
                     <com.example.ggb.eleme.xd.ImageButton
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -124,22 +133,23 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="1.5"
                     android:text="@string/find_more"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="250dp"
                 android:orientation="vertical">
                 <ImageView
+                    android:background="@drawable/xshl"
                     android:layout_width="match_parent"
                     android:layout_height="00dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="2"/>
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="3">
+                    android:layout_weight="4">
                     <com.example.ggb.eleme.xd.ImageButton
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -156,22 +166,23 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="1.5"
                     android:text="@string/find_more"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="250dp"
                 android:orientation="vertical">
                 <ImageView
+                    android:background="@drawable/mrjx"
                     android:layout_width="match_parent"
                     android:layout_height="00dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="2"/>
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="3">
+                    android:layout_weight="4">
                     <com.example.ggb.eleme.xd.ImageButton
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -188,7 +199,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="1.5"
                     android:text="@string/find_more"/>
             </LinearLayout>
         </LinearLayout>
