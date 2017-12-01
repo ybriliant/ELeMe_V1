@@ -25,7 +25,7 @@ public class LunBo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lunbo);
+        setContentView(R.layout.activity_take_out);
 
         mRollViewPager = (RollPagerView) findViewById(R.id.roll_view_paper);
 

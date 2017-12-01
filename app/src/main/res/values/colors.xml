@@ -9,4 +9,5 @@
     <color name="start">#4b62fc</color>
     <color name="end">#1f26f7</color>
     <color name="red">#ff0000</color>
+    <color name="nocolor">#00000000</color>
 </resources>
