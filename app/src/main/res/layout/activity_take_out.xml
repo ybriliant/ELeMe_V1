@@ -6,6 +6,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     tools:context="com.example.ggb.eleme.MainActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -101,12 +102,12 @@
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -177,26 +178,36 @@
                 android:layout_height="160dp"
                 android:layout_marginRight="1dp"
                 android:layout_marginLeft="1dp"
+                android:background="@color/white"
                 app:rollviewpager_play_delay="3000"/>
-            <!--<android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="4dp">
-            </android.support.v7.widget.CardView>
 
             <TextView
-                android:id="@+id/view_test"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />-->
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/support"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="15dp"
+                android:textSize="18dp"
+                android:background="@color/white"/>
+            <ListView
+                android:id="@+id/university_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:divider="@null"
+                android:background="@color/white"
+                android:scrollbars="none" />
         </LinearLayout>
+
     </android.support.v4.widget.NestedScrollView>
 
-    <!--<android.support.design.widget.FloatingActionButton
+    <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:src="@mipmap/ic_launcher"
         app:layout_anchor="@id/appBar"
-        app:layout_anchorGravity="bottom|end"/>-->
+        app:layout_anchorGravity="bottom|end"/>
 
 </android.support.design.widget.CoordinatorLayout>
