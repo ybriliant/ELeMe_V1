@@ -81,6 +81,7 @@
                     android:textSize="20sp" />
 
                 <TextView
+                    android:id="@+id/setPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="80dp"
@@ -96,24 +97,6 @@
                     android:textSize="20sp" />
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="查看更多"
-                    android:gravity="center"
-                    android:textSize="15sp"
-                    android:id="@+id/findmore"
-                    />
-
-            </LinearLayout>
-
 
         </LinearLayout>
 
