@@ -90,7 +90,7 @@
                 android:layout_alignLeft="@+id/p4_user_name"
                 android:layout_alignStart="@+id/p4_user_name"
                 android:layout_below="@+id/p4_user_name"
-                android:text="100****86"
+                android:text="100****8686"
                 android:textColor="#fff"
                 android:textSize="14sp" />
             <Button
