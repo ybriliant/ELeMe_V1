@@ -151,8 +151,6 @@
                 android:layout_height="500dp"
                 android:src="@drawable/p4_ad2" />
 
-
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
