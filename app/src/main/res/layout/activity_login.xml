@@ -79,6 +79,6 @@
             android:text="Login"
             android:textColor="#fff"
             android:textSize="20sp"
-            android:background="#1f9dfe"/>
+            android:background="#1e9dfe"/>
     </RelativeLayout>
 </LinearLayout>
