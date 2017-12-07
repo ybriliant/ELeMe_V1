@@ -1,4 +1,4 @@
-package com.example.ggb.eleme.xd;
+package com.example.ggb.eleme;
 
 import android.graphics.Color;
 import android.os.Bundle;
