@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+    android:useLevel="false">
+    <!-- 矩形的圆角弧度 -->
+    <corners android:radius="7dp" />
+    <!-- 矩形的填充色 -->
+    <gradient
+
+        android:startColor="#CCCC00"
+
+        android:endColor="#CCCC00"
+
+        android:useLevel="false"
+
+        android:type="linear"
+
+        android:angle="90"
+
+        >
+
+    </gradient>
+</shape>

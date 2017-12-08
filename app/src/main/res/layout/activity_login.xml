@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/password_all">
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp"
+            android:text="Account"
+            android:textColor="#fff" />
+        <EditText
+            android:id="@+id/account"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:shadowColor="#000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/password_all"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/remenber">
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp"
+            android:text="Password:"
+            android:textColor="#fff"/>
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:inputType="textPassword"
+            android:shadowColor="#000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/remenber"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/login"
+        >
+
+        <CheckBox
+            android:id="@+id/remenber_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Remenber password"
+            />
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+           android:layout_centerInParent="true"
+            android:text="Login"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:background="#1b9dfe"/>
+    </RelativeLayout>
+</LinearLayout>

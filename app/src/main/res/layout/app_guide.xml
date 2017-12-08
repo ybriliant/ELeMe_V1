@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </android.support.v4.view.ViewPager>
+
+    <!-- 指示点 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/guidedot_1"
+            android:padding="15dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/guide_dot" />
+        <ImageView
+            android:id="@+id/guidedot_2"
+            android:padding="15dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/guide_dot" />
+        <ImageView
+            android:id="@+id/guidedot_3"
+            android:padding="15dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/guide_dot" />
+        <ImageView
+            android:id="@+id/guidedot_4"
+            android:padding="15dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/guide_dot" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+       	android:gravity="center_horizontal"
+       	android:layout_marginBottom="20dp"
+        android:background="#00aa00"
+        android:text="开始体验"
+        android:padding="15dp"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:visibility="gone" />
+
+</RelativeLayout>

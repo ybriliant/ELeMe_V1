@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/backcolor">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/user_setting"
+            android:layout_marginLeft="14dp"
+            android:layout_marginStart="14dp"
+            android:text="我的"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/user_note"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignTop="@+id/textView"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_toLeftOf="@+id/user_setting"
+            android:layout_toStartOf="@+id/user_setting"
+            android:background="@drawable/note" />
+
+        <Button
+            android:id="@+id/user_setting"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="11dp"
+            android:layout_marginRight="11dp"
+            android:background="@drawable/setting" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backcolor"
+                android:padding="10dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/p4_user_icon"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/p4_user_icon" />
+
+                <TextView
+                    android:id="@+id/p4_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/p4_user_icon"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_toEndOf="@+id/p4_user_icon"
+                    android:layout_toRightOf="@+id/p4_user_icon"
+                    android:text="user_name"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/p4_user_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/p4_user_name"
+                    android:layout_alignStart="@+id/p4_user_name"
+                    android:layout_below="@+id/p4_user_name"
+                    android:text="100****86"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/p4_return"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
+            <ImageView
+                android:layout_width="378dp"
+                android:layout_height="180dp"
+                android:src="@drawable/p4_ad"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/location"/>
+
+                <TextView
+                    android:id="@+id/p4_item_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:textColor="#515151"
+                    android:textSize="18dp"
+                    android:text="收货地址"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/love"/>
+
+                <TextView
+                    android:id="@+id/p4_item_collection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="#515151"
+                    android:textSize="18dp"
+                    android:text="我的收藏"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:src="@drawable/p4_ad2" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
