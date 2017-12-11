@@ -191,12 +191,11 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:id="@+id/floatbar"
-        android:layout_gravity=""
         fab:elevation="6dp"
         fab:pressedTranslationZ="12dp"
         android:layout_marginRight="15dp"
         app:layout_anchorGravity="bottom|end"
         app:layout_anchor="@id/aaa"
-        android:src="@drawable/guide_img1"/>
+        android:src="@drawable/img1"/>
 
 </android.support.design.widget.CoordinatorLayout>

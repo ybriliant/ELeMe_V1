@@ -15,6 +15,8 @@ import com.yanghan.fragment_tab.FragmentPage2;
 import com.yanghan.fragment_tab.FragmentPage3;
 import com.yanghan.fragment_tab.FragmentPage4;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity{
 
     //定义对象
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initView();
     }
 
@@ -46,6 +49,8 @@ public class MainActivity extends AppCompatActivity{
         mTabHost.setup(this, getSupportFragmentManager(), R.id.home_container);
         //设置取消分割线
         mTabHost.getTabWidget().setDividerDrawable(null);
+
+
         //得到fragment的个数
         int count = fragmentArray.length;
         for(int i = 0; i < count; i++){

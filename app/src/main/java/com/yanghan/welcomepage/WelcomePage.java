@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.a1141705068qq.main.MainActivity;
+import com.a1141705068qq.main.login_fragment;
 import com.a1141705068qq.class_one.R;
 import com.yanghan.appguide.AppGuide;
 

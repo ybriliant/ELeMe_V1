@@ -5,6 +5,7 @@
     android:orientation="vertical" >
     <ImageView 
         android:id="@+id/imgView"
+		android:scaleType="fitXY"
         android:layout_width="match_parent"
    		android:layout_height="match_parent"
    		android:src="@drawable/guide_img1"

@@ -7,10 +7,11 @@
 
     <ImageView
         android:id="@+id/img_tab"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
         android:focusable="false"
-        android:padding="3dp" 
+        android:padding="3dp"
+        android:contentDescription="aaa"
         android:src="@drawable/home_seletor">
     </ImageView>
 
@@ -18,8 +19,8 @@
         android:id="@+id/tv_tab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
-        android:text="首页"
-        android:textSize="15sp"
+        android:text="@string/frame1"
+        android:textSize="10sp"
         android:textColor="@drawable/tab_text_selecor">
     </TextView>
 
