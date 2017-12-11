@@ -10,10 +10,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.jscheng.elemeapplication.R;
-import com.jscheng.elemeapplication.imp.ShopCartImp;
-import com.jscheng.elemeapplication.model.Dish;
-import com.jscheng.elemeapplication.model.ShopCart;
+
+import com.a1141705068qq.class_one.R;
+import com.a1141705068qq.main.imp.ShopCartImp;
+import com.a1141705068qq.main.model.Dish;
+import com.a1141705068qq.main.model.ShopCart;
 
 import java.util.ArrayList;
 

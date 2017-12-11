@@ -8,8 +8,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.jscheng.elemeapplication.R;
-import com.jscheng.elemeapplication.model.DishMenu;
+
+import com.a1141705068qq.class_one.R;
+import com.a1141705068qq.main.model.DishMenu;
 
 import java.util.ArrayList;
 import java.util.List;

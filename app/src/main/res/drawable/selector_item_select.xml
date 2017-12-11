@@ -3,4 +3,5 @@
 
     <item android:state_selected="true" android:drawable="@color/white"/>
     <item android:state_selected="false" android:drawable="@color/gray"/>
-</selector>
+
+</selector >

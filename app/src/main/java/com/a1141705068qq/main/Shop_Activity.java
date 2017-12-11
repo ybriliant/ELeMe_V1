@@ -10,7 +10,6 @@ import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.graphics.PointF;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -26,6 +25,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.a1141705068qq.class_one.R;
+import com.a1141705068qq.main.adapter.LeftMenuAdapter;
+import com.a1141705068qq.main.adapter.RightDishAdapter;
+import com.a1141705068qq.main.imp.ShopCartImp;
+import com.a1141705068qq.main.model.Dish;
+import com.a1141705068qq.main.model.DishMenu;
+import com.a1141705068qq.main.model.ShopCart;
+import com.a1141705068qq.main.wiget.FakeAddImageView;
+import com.a1141705068qq.main.wiget.PointFTypeEvaluator;
+import com.a1141705068qq.main.wiget.ShopCartDialog;
 
 import java.util.ArrayList;
 
