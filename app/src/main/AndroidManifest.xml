@@ -14,7 +14,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.a1141705068qq.main.login_fragment"></activity>
         <activity android:name="com.a1141705068qq.main.MainActivity"></activity>
         <activity android:name="com.yanghan.appguide.AppGuide"></activity>
     </application>

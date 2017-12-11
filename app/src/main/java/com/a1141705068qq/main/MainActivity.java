@@ -15,8 +15,6 @@ import com.yanghan.fragment_tab.FragmentPage2;
 import com.yanghan.fragment_tab.FragmentPage3;
 import com.yanghan.fragment_tab.FragmentPage4;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity{
 
     //定义对象

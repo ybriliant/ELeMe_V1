@@ -39,7 +39,7 @@ import java.util.ArrayList;
 
 
 public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSelectedListener,ShopCartImp,ShopCartDialog.ShopCartDialogImp{
-    private final static String TAG = "MainActivity";
+    private final static String TAG = "Shop_Activity";
     private RecyclerView leftMenu;//左侧菜单栏
     private RecyclerView rightMenu;//右侧菜单栏
     private TextView headerView;

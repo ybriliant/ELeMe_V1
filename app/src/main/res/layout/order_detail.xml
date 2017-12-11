@@ -9,7 +9,7 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#255ec9"
+        android:background="@drawable/backcolor"
         android:orientation="horizontal">
 
         <TextView
