@@ -162,8 +162,8 @@
                     android:background="@color/nocolor"/>
             </LinearLayout>
 
-
-
+            <include layout="@layout/layout_line1"/>
+            <include layout="@layout/layout_line2"/>
 
             <TextView
                 android:id="@+id/aaa"
