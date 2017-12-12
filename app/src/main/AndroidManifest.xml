@@ -16,6 +16,7 @@
         </activity>
         <activity android:name="com.a1141705068qq.main.MainActivity"></activity>
         <activity android:name="com.yanghan.appguide.AppGuide"></activity>
+        <activity android:name="com.a1141705068qq.main.Shop_Activity"></activity>
     </application>
 
 </manifest>
