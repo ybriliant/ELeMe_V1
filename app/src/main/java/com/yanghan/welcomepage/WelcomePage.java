@@ -6,12 +6,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.a1141705068qq.main.MainActivity;
 import com.a1141705068qq.class_one.R;
+import com.a1141705068qq.main.LoginActivity;
+import com.a1141705068qq.main.MainActivity;
 import com.yanghan.appguide.AppGuide;
 
 
 public class WelcomePage extends Activity {
+	private SharedPreferences pref;
 	//使用Handler实现延时或者定时器也可以
 	private Handler handler;
 	private boolean isFirst=true;
@@ -36,7 +38,12 @@ public class WelcomePage extends Activity {
 					startActivity(intent);
 				}else{
 					//不是第一次进入该APP,则跳转到MainActivity
-					intent=new Intent(WelcomePage.this, MainActivity.class);
+					pref=getSharedPreferences("key",MODE_PRIVATE);
+					if((pref.getString("password","")).equals("")) {
+						intent = new Intent(WelcomePage.this, LoginActivity.class);
+					}else{
+						intent=new Intent(WelcomePage.this, MainActivity.class);
+					}
 					startActivity(intent);
 				}
 				finish();
