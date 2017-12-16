@@ -12,4 +12,7 @@
     <string name="my">我的</string>
     <string name="shouhuo">收货地址</string>
     <string name="shoucan">我的收藏</string>
+    <string name="gravity_left">left</string>
+    <string name="gravity_center">center</string>
+    <string name="gravity_right">right</string>
 </resources>

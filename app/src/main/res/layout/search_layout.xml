@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.a1141705068qq.main.flowlayout.ClearableEditText
+            android:id="@+id/edt"
+            android:paddingLeft="15dp"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:hint="请输入商铺、商品名称"
+            android:layout_alignBottom="@+id/btn"
+            android:background="@drawable/search_shape"
+            android:textSize="16dp"
+            android:layout_toLeftOf="@+id/btn"
+
+            />
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@null"
+            android:layout_alignParentRight="true"
+            android:text="搜索" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+<RelativeLayout
+    android:id="@+id/search_history_ly"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    >
+    <TextView
+        android:id="@+id/search_history_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:gravity="center"
+        android:text="历史搜索"
+        android:layout_alignParentLeft="true"
+        android:background="#ffffff"
+        android:textSize="15sp"
+        android:textColor="#000000"/>
+    <ImageButton
+        android:id="@+id/clear_history_bn"
+        android:background="#ffffff"
+        android:src="@drawable/search_history_clear"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+
+        android:scaleType="fitCenter"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/flowlayout_history"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:max_select="-1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="热门搜索"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:textSize="15sp"
+                android:textColor="#000000"/>
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/flowlayout_hot"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:max_select="-1" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
