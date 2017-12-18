@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.a1141705068qq.class_one">
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -16,6 +17,8 @@
         </activity>
         <activity android:name="com.a1141705068qq.main.MainActivity"></activity>
         <activity android:name="com.yanghan.appguide.AppGuide"></activity>
+        <activity android:name="com.a1141705068qq.main.ggb.LogoutActivity"></activity>
+        <activity android:name="com.a1141705068qq.main.LoginActivity"></activity>
     </application>
 
 </manifest>
