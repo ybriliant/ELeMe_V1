@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\46637\AndroidStudioProjects\ELeMe_V1\AndroidFrame_1.iml" filepath="C:\Users\46637\AndroidStudioProjects\ELeMe_V1\AndroidFrame_1.iml" />
+      <module fileurl="file://C:\Users\jie\AndroidStudioProjects\ELeMe_V1\AndroidFrame_1.iml" filepath="C:\Users\jie\AndroidStudioProjects\ELeMe_V1\AndroidFrame_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/ELeMe_V1.iml" filepath="$PROJECT_DIR$/ELeMe_V1.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
