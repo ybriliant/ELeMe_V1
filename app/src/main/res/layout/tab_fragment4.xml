@@ -94,6 +94,7 @@
                     android:textColor="#fff"
                     android:textSize="14sp" />
                 <Button
+                    android:id="@+id/user_info"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="@drawable/p4_return"
