@@ -181,7 +181,7 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
         dishs4.add(new Dish("粤菜",1.0,10));
         dishs4.add(new Dish("赣菜",1.0,10));
         dishs4.add(new Dish("东北菜",1.0,10));
-        DishMenu menu1 = new DishMenu("晚餐",dishs3);
+        DishMenu menu1 = new DishMenu("其他",dishs4);
 
         dishMenuList.add(breakfast);
         dishMenuList.add(launch);

@@ -12,4 +12,23 @@
     <string name="my">我的</string>
     <string name="shouhuo">收货地址</string>
     <string name="shoucan">我的收藏</string>
+    <string name="dindanpeisong">订单配送至</string>
+    <string name="zhunshida">准时达</string>
+    <string name="peifu">超时10分钟享受赔付</string>
+    <string name="fengniao">蜂鸟快送</string>
+    <string name="dian">您点主食了吗？</string>
+    <string name="haohua">豪华单人餐</string>
+    <string name="canhe">餐盒</string>
+    <string name="peisongfei">配送费</string>
+    <string name="youhui">特价商品不与新用户立减共享，已选最大优惠</string>
+    <string name="hongbao">红包</string>
+    <string name="xiaoji">小计</string>
+    <string name="wu">无红包可用</string>
+    <string name="shuoming">优惠说明</string>
+    <string name="zaixianzhifu">在线支付</string>
+    <string name="niming">匿名购买</string>
+    <string name="canjushuliang">餐具份数/口味偏好</string>
+    <string name="huanbao">马上助力环保</string>
+    <string name="gotopay">去支付</string>
+    <string name="rmb">¥</string>
 </resources>

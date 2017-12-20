@@ -55,3 +55,4 @@ public class Restaurant {
         this.res_picture = res_picture;
     }
 }
+
