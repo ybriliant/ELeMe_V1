@@ -13,15 +13,19 @@ import android.widget.Button;
 import com.a1141705068qq.class_one.R;
 import com.a1141705068qq.main.MainActivity;
 import com.a1141705068qq.main.ggb.LogoutActivity;
+import com.a1141705068qq.main.ggb.User_infoActivity;
 
 public class FragmentPage4 extends Fragment implements View.OnClickListener{
 	private Button user_setting;
+	private Button user_info;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 		View view=inflater.inflate(R.layout.tab_fragment4, null);
 		user_setting=(Button) view.findViewById(R.id.user_setting);
+		user_info=(Button)view.findViewById(R.id.user_info);
+		user_info.setOnClickListener(this);
 		user_setting.setOnClickListener(this);
 		return view;
 	}
@@ -41,6 +45,9 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener{
 				Intent intent1=new Intent(getActivity(), LogoutActivity.class);
 				startActivity(intent1);
 				break;
+			case R.id.user_info:
+				Intent intent2=new Intent(getActivity(), User_infoActivity.class);
+				startActivity(intent2);
 			default:
 				break;
 		}

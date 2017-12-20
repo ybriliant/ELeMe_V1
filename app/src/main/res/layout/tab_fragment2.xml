@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -12,198 +13,246 @@
         android:padding="15dp"
         android:textSize="20sp"
         android:textColor="@color/white" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <LinearLayout
-                android:baselineAligned="false"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-                    <Button
-                        android:background="@drawable/jbsc"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"/>
-                    <Button
-                        android:background="@drawable/bcbl"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"/>
-                    <Button
-                        android:background="@drawable/zbyh"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-                    <Button
-                        android:background="@drawable/yhbk"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"/>
-                    <Button
-                        android:background="@drawable/tjyj"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"/>
-                    <Button
-                        android:background="@drawable/mfll"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"/>
-                </LinearLayout>
-            </LinearLayout>
-            <ImageView
-                android:background="@drawable/redimage"
-                android:layout_width="match_parent"
-                android:layout_height="80dp" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:orientation="vertical">
-                <ImageView
-                    android:background="@drawable/msrt"
-                    android:layout_width="match_parent"
-                    android:layout_height="00dp"
-                    android:layout_weight="2"/>
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="4">
-                    <ImageButton
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1">
 
-                    </ImageButton>
-                    <ImageButton
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"></ImageButton>
-                    <ImageButton
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"></ImageButton>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/jbsc"
+                        tools:ignore="NestedWeights" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bcbl" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/zbyh" />
                 </LinearLayout>
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1.5"
-                    android:text="@string/find_more"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/yhbk"
+                        tools:ignore="NestedWeights" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/tjyj" />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/mfll" />
+                </LinearLayout>
             </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/redimage"
+                tools:ignore="ContentDescription" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:orientation="vertical">
+
                 <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="00dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/msrt"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
+
+                    <com.a1141705068qq.main.dxd.FoodView
+                        android:id="@+id/food_commend1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        tools:ignore="NestedWeights" />
+
+                    <com.a1141705068qq.main.dxd.FoodView
+                        android:id="@+id/food_commend2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <com.a1141705068qq.main.dxd.FoodView
+                        android:layout_width="0dp"
+                        android:id="@+id/food_commend3"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.5"
+                    android:text="@string/find_more" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="00dp"
+                    android:layout_weight="2"
                     android:background="@drawable/tttj"
-                    android:layout_width="match_parent"
-                    android:layout_height="00dp"
-                    android:layout_weight="2"/>
+                    tools:ignore="ContentDescription" />
+
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="4">
-                    <ImageButton
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
+
+                    <com.a1141705068qq.main.dxd.FoodView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></ImageButton>
-                    <ImageButton
+                        android:layout_weight="1"
+                        tools:ignore="NestedWeights" />
+
+                    <com.a1141705068qq.main.dxd.FoodView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></ImageButton>
-                    <ImageButton
+                        android:layout_weight="1" />
+
+                    <com.a1141705068qq.main.dxd.FoodView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></ImageButton>
+                        android:layout_weight="1" />
                 </LinearLayout>
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1.5"
-                    android:text="@string/find_more"/>
+                    android:text="@string/find_more" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:orientation="vertical">
+
                 <ImageView
-                    android:background="@drawable/xshl"
                     android:layout_width="match_parent"
                     android:layout_height="00dp"
-                    android:layout_weight="2"/>
+                    android:layout_weight="2"
+                    android:background="@drawable/xshl" />
+
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="4">
-                    <ImageButton
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
+
+                    <com.a1141705068qq.main.dxd.FoodView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></ImageButton>
-                    <ImageButton
+                        android:layout_weight="1"></com.a1141705068qq.main.dxd.FoodView>
+
+                    <com.a1141705068qq.main.dxd.FoodView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></ImageButton>
-                    <ImageButton
+                        android:layout_weight="1"></com.a1141705068qq.main.dxd.FoodView>
+
+                    <com.a1141705068qq.main.dxd.FoodView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></ImageButton>
+                        android:layout_weight="1"></com.a1141705068qq.main.dxd.FoodView>
                 </LinearLayout>
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1.5"
-                    android:text="@string/find_more"/>
+                    android:text="@string/find_more" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:orientation="vertical">
+
                 <ImageView
-                    android:background="@drawable/mrjx"
                     android:layout_width="match_parent"
                     android:layout_height="00dp"
-                    android:layout_weight="2"/>
+                    android:layout_weight="2"
+                    android:background="@drawable/mrjx" />
+
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="4">
-                    <ImageButton
+                    android:layout_weight="4"
+                    android:orientation="horizontal">
+
+                    <com.a1141705068qq.main.dxd.FoodView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></ImageButton>
-                    <ImageButton
+                        android:layout_weight="1"></com.a1141705068qq.main.dxd.FoodView>
+
+                    <com.a1141705068qq.main.dxd.FoodView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></ImageButton>
-                    <ImageButton
+                        android:layout_weight="1"></com.a1141705068qq.main.dxd.FoodView>
+
+                    <com.a1141705068qq.main.dxd.FoodView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"></ImageButton>
+                        android:layout_weight="1"></com.a1141705068qq.main.dxd.FoodView>
                 </LinearLayout>
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1.5"
-                    android:text="@string/find_more"/>
+                    android:text="@string/find_more" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
