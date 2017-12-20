@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.a1141705068qq.class_one.R;
 import com.a1141705068qq.main.MainActivity;
 import com.a1141705068qq.main.Shop_Activity;
+import com.a1141705068qq.main.gzcsearchtest.gzcsearchtest;
 import com.a1141705068qq.main.util.HttpUtil;
 import com.a1141705068qq.main.util.Utility;
 import com.yanghan.fragment_tab.fragmentOneNeed.ShopAdapter;
@@ -38,6 +39,7 @@ import static android.media.CamcorderProfile.get;
 public class FragmentPage1 extends Fragment{
 	private View view;
 	private ListView listView=null;
+	private  TextView tv;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
@@ -62,6 +64,15 @@ public class FragmentPage1 extends Fragment{
 				Toast.makeText(getContext(),"进入店铺",Toast.LENGTH_SHORT).show();
 			}
 		});
+
+		tv=(TextView)view.findViewById(R.id.search_tv);
+		tv.setOnClickListener(new TextView.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getActivity(),gzcsearchtest.class);
+                startActivity(intent);
+            }
+        });
 	}
 
 
