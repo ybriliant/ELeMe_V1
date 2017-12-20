@@ -9,14 +9,19 @@ public class Dish {
     private double dishPrice;
     private int dishAmount;
     private int dishRemain;
+    //private String image_dish;
 
-    public Dish(String dishName, double dishPrice, int dishAmount){
+    public Dish(String dishName, double dishPrice, int dishAmount/*,String image_dish*/){
         this.dishName = dishName;
         this.dishPrice = dishPrice;
         this.dishAmount = dishAmount;
         this.dishRemain = dishAmount;
+        //this.image_dish = image_dish;
     }
 
+   /* public String getImage_dish() {
+        return image_dish;
+    }*/
 
     public String getDishName() {
         return dishName;
@@ -64,5 +69,6 @@ public class Dish {
                 this.dishPrice ==  ((Dish)obj).dishPrice &&
                 this.dishAmount == ((Dish)obj).dishAmount &&
                 this.dishRemain == ((Dish)obj).dishRemain;
+                //this.image_dish ==((Dish) obj).image_dish;
     }
 }

@@ -2,10 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_layout"
     tools:context="com.a1141705068qq.main.Shop_Activity">
+    <TextView
+        android:id="@+id/ddd"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:background="@drawable/backcolor"/>
 
     <LinearLayout
         android:id="@+id/shopping_cart_bottom"
@@ -29,6 +33,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_below="@+id/ddd"
         android:layout_above="@+id/shopping_cart_bottom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -39,7 +44,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            android:background="@color/gray">
+            android:background="@color/white_touming">
         </android.support.v7.widget.RecyclerView>
 
         <RelativeLayout

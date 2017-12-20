@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <ImageButton
+        <ImageView
             android:id="@+id/image_restaurant"
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -85,14 +85,14 @@
                 android:layout_below="@+id/ratingbar1"
                 android:text="¥20起送"
                 android:textSize="13dp"/>
-            <view
+            <View
                 android:id="@+id/line1"
                 android:layout_width="1dp"
                 android:layout_height="15dp"
                 android:background="@color/gray"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@+id/start_send"
-                android:layout_below="@+id/ratingbar1"></view>
+                android:layout_below="@+id/ratingbar1"></View>
             <TextView
                 android:id="@+id/send_fee"
                 android:textSize="13dp"
@@ -111,14 +111,14 @@
                 android:gravity="center"
                 android:layout_below="@+id/ratingbar1"
                 android:layout_alignParentRight="true" />
-            <view
+            <View
                 android:id="@+id/line2"
                 android:layout_width="1dp"
                 android:layout_height="15dp"
                 android:background="@color/gray"
                 android:layout_toLeftOf="@+id/arrive_time_restaurant"
                 android:layout_below="@+id/ratingbar1"
-                android:layout_marginRight="5dp"></view>
+                android:layout_marginRight="5dp"></View>
             <TextView
                 android:id="@+id/distant_restaurant"
                 android:layout_width="wrap_content"
@@ -129,14 +129,14 @@
                 android:gravity="center"
                 android:layout_below="@+id/ratingbar1"
                 android:layout_marginRight="5dp"/>
-            <view
+            <View
                 android:id="@+id/line3"
                 android:layout_width="300dp"
                 android:layout_height="1dp"
                 android:background="@color/black"
                 android:layout_below="@+id/send_fee"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="20dp"></view>
+                android:layout_marginTop="20dp"></View>
 
         </RelativeLayout>
     </LinearLayout>
@@ -154,5 +154,10 @@
             android:gravity="center"
             android:layout_marginLeft="80dp"/>
     </RelativeLayout>
+    <ImageView
+        android:id="@+id/abc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/img5"/>
 
 </LinearLayout>

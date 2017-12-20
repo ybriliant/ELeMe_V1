@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.WindowManager;
 
 import com.a1141705068qq.class_one.R;
 import com.a1141705068qq.main.LoginActivity;
@@ -22,6 +23,8 @@ public class WelcomePage extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.welcome_page);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 
 		//将是否是第一次的状态用SharedPreferences保存和取出
 		final SharedPreferences sp= getSharedPreferences("FirstLaunch",MODE_PRIVATE);

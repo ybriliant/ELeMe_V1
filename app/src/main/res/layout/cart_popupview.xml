@@ -14,7 +14,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/gray">
+            android:background="@drawable/backcolor4">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_delete_grey_500_24dp"
+                    android:src="@drawable/delete"
                     android:layout_marginRight="@dimen/item_dish_small_horizontal_margin"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -95,6 +95,24 @@
             android:layout_height="@dimen/shopping_cart_image_height"
             android:layout_gravity="center"
             android:src="@drawable/ic_shopping_cart_white_24dp"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/shopping_cart_layout_topay"
+        android:layout_width="100dp"
+        android:layout_height="49dp"
+        android:layout_above="@+id/lineview"
+        android:clickable="true"
+        android:background="@color/green"
+        android:layout_alignParentRight="true">
+        <Button
+            android:id="@+id/pay_right_away"
+            android:background="@color/green"
+            android:text="@string/quzhifu"
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </FrameLayout>
 
     <TextView

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#c2c6d9</color>
+    <color name="colorPrimary">#3a51e3</color>
     <color name="colorPrimaryDark">#3a51e3</color>
     <color name="colorAccent">#FF4081</color>
     <!--自定义了 一些颜色-->
     <color name="tv_blue">#ff00bcd4</color>
-<color name="tv_gray">#cc222222</color>
+    <color name="tv_gray">#cc222222</color>
+    <color name="tv_gray2">#55222222</color>
     <color name="blue">#4059ff</color>
     <color name="white">#ffffff</color>  <!--古董白 -->
     <color name="gray">#ebe9e9</color>

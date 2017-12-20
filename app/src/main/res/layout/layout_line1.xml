@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:weightSum="4"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -20,14 +21,14 @@
             android:id="@+id/iv_icon1"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/img1" />
+            android:background="@drawable/ms" />
 
         <TextView
             android:id="@+id/tv_name1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="图标名称" />
+            android:text="@string/meishi" />
     </LinearLayout>
 
     <LinearLayout
@@ -43,14 +44,14 @@
             android:id="@+id/iv_icon2"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/img1" />
+            android:background="@drawable/wc" />
 
         <TextView
             android:id="@+id/tv_name2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="图标名称" />
+            android:text="@string/wucan" />
     </LinearLayout>
 
     <LinearLayout
@@ -67,14 +68,14 @@
             android:id="@+id/iv_icon3"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/img1" />
+            android:background="@drawable/scbl" />
 
         <TextView
             android:id="@+id/tv_name3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="图标名称" />
+            android:text="@string/shangchaobianli" />
     </LinearLayout>
 
     <LinearLayout
@@ -91,14 +92,14 @@
             android:id="@+id/iv_icon4"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/img1" />
+            android:background="@drawable/tpyp" />
 
         <TextView
             android:id="@+id/tv_name4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="图标名称" />
+            android:text="@string/yingpingtianping" />
     </LinearLayout>
 
 </LinearLayout>

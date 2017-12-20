@@ -31,5 +31,19 @@
     <string name="huanbao">马上助力环保</string>
     <string name="gotopay">去支付</string>
     <string name="rmb">¥</string>
-    <string name="loading">Loading^^^</string>
+    <string name="chaofan">炒饭</string>
+    <string name="banli">板栗</string>
+    <string name="jichibaofan">鸡翅包饭</string>
+    <string name="jioazi">饺子</string>
+    <string name="laowanmian">老碗面</string>
+    <string name="hanbao">汉堡</string>
+    <string name="meishi">美食</string>
+    <string name="wucan">午餐</string>
+    <string name="shangchaobianli">商超便利</string>
+    <string name="yingpingtianping">甜品饮品</string>
+    <string name="guoshushenxian">果蔬生鲜</string>
+    <string name="xinpingtehui">新品特惠</string>
+    <string name="dapaiwuzhe">大牌五折</string>
+    <string name="bangmaibangsong">帮买帮送</string>
+    <string name="quzhifu">去支付</string>
 </resources>

@@ -11,11 +11,11 @@
 
     <TextView
         android:id="@+id/left_menu_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/item_dish_top_margin"
-        android:layout_marginBottom="@dimen/item_dish_top_margin"
+        android:gravity="center"
         android:text="@string/menu_name"
         android:textSize="@dimen/item_menu_word_size"
+        android:background="@drawable/backcolor3"
         android:textColor="@color/black"/>
 </LinearLayout>

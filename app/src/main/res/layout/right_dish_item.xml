@@ -4,19 +4,31 @@
     android:id="@+id/right_dish_item"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/item_dish_hight">
+    android:layout_height="@dimen/item_dish_hight"
+    android:background="@color/all_touming">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/item_dish_top_margin"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@color/all_touming">
+        <ImageView
+            android:id="@+id/image_dish"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/biankuang"
+            android:src="@drawable/ms"
+            android:layout_marginLeft="5dp"/>
         <TextView
             android:id="@+id/right_dish_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/item_dish_horizontal_margin"
+            android:layout_marginTop="5dp"
             android:text="@string/dish_name"
+            android:layout_gravity="center|top"
             android:textColor="@color/black"
             android:textSize="@dimen/item_dish_word_size"/>
     </LinearLayout>
@@ -24,12 +36,14 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="0.5"
+        android:background="@color/all_touming">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:layout_gravity="left">
+            android:layout_gravity="left"
+            android:background="@color/all_touming">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,6 +65,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:gravity="end"
+            android:background="@color/all_touming"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_marginBottom="1dp"
             android:layout_gravity="right|center_vertical">
