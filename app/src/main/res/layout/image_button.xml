@@ -4,15 +4,20 @@
     android:layout_height="match_parent">
     <ImageView
         android:id="@+id/food_image"
+        android:src="@drawable/load"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="5"/>
     <TextView
+        android:text="@string/loading"
         android:id="@+id/name_text"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:gravity="center"
         android:layout_weight="1"/>
     <TextView
+        android:text="@string/loading"
+        android:gravity="center"
         android:id="@+id/cost_text"
         android:textColor="@color/red"
         android:layout_width="match_parent"
