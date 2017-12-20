@@ -31,6 +31,7 @@ public class FragmentPage1 extends Fragment{
 	private View view;
 	private ImageView aaaa;
 	private ListView listView=null;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		view=inflater.inflate(R.layout.tab_fragment1, null);

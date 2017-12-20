@@ -52,6 +52,7 @@
                 android:descendantFocusability="blocksDescendants"
                 style="@style/foodRatingBar">
             </RatingBar>
+
             <TextView
                 android:id="@+id/score_restaurant"
                 android:layout_width="wrap_content"
