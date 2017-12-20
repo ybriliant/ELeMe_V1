@@ -8,6 +8,7 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.PointF;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -23,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.a1141705068qq.class_one.R;
 import com.a1141705068qq.main.adapter.LeftMenuAdapter;
@@ -31,11 +33,19 @@ import com.a1141705068qq.main.imp.ShopCartImp;
 import com.a1141705068qq.main.model.Dish;
 import com.a1141705068qq.main.model.DishMenu;
 import com.a1141705068qq.main.model.ShopCart;
+import com.a1141705068qq.main.util.HttpUtil;
+import com.a1141705068qq.main.util.Utility;
 import com.a1141705068qq.main.wiget.FakeAddImageView;
 import com.a1141705068qq.main.wiget.PointFTypeEvaluator;
 import com.a1141705068qq.main.wiget.ShopCartDialog;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 
 public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSelectedListener,ShopCartImp,ShopCartDialog.ShopCartDialogImp{
@@ -57,6 +67,8 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
     private TextView totalPriceTextView;
     private TextView totalPriceNumTextView;
     private RelativeLayout mainLayout;
+    private int res_id;
+    private List<com.a1141705068qq.main.gson.Dish> mdishes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +76,10 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
         setContentView(R.layout.activity_shop);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-
-        initData();
-        initView();
-        initAdapter();
+        mdishes=new ArrayList<>();
+        Intent intent=getIntent();
+        res_id=intent.getIntExtra("res_id",0);
+        sendRequest(1);
     }
 
     private void initView(){
@@ -145,36 +157,26 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
         });
     }
 
-    private void initData(){
+    private void initData(List<com.a1141705068qq.main.gson.Dish> dishes){
         shopCart = new ShopCart();
         dishMenuList = new ArrayList<>();
         ArrayList<Dish> dishs1 = new ArrayList<>();
-        dishs1.add(new Dish("面包",1.0,10));
-        dishs1.add(new Dish("蛋挞",1.0,10));
-        dishs1.add(new Dish("牛奶",1.0,10));
-        dishs1.add(new Dish("肠粉",1.0,10));
-        dishs1.add(new Dish("绿茶饼",1.0,10));
-        dishs1.add(new Dish("花卷",1.0,10));
-        dishs1.add(new Dish("包子",1.0,10));
-        DishMenu breakfast = new DishMenu("早点",dishs1);
+        for(com.a1141705068qq.main.gson.Dish dish:dishes){
+            dishs1.add(new Dish(dish.getDis_name(),dish.getDis_price(),10));
+        }
+        DishMenu breakfast = new DishMenu("分类一",dishs1);
 
         ArrayList<Dish> dishs2 = new ArrayList<>();
-        dishs2.add(new Dish("粥",1.0,10));
-        dishs2.add(new Dish("炒饭",1.0,10));
-        dishs2.add(new Dish("炒米粉",1.0,10));
-        dishs2.add(new Dish("炒粿条",1.0,10));
-        dishs2.add(new Dish("炒牛河",1.0,10));
-        dishs2.add(new Dish("炒菜",1.0,10));
-        DishMenu launch = new DishMenu("午餐",dishs2);
+        for(com.a1141705068qq.main.gson.Dish dish:dishes){
+            dishs2.add(new Dish(dish.getDis_name(),dish.getDis_price(),10));
+        }
+        DishMenu launch = new DishMenu("分类二",dishs2);
 
         ArrayList<Dish> dishs3 = new ArrayList<>();
-        dishs3.add(new Dish("淋菜",1.0,10));
-        dishs3.add(new Dish("川菜",1.0,10));
-        dishs3.add(new Dish("湘菜",1.0,10));
-        dishs3.add(new Dish("粤菜",1.0,10));
-        dishs3.add(new Dish("赣菜",1.0,10));
-        dishs3.add(new Dish("东北菜",1.0,10));
-        DishMenu evening = new DishMenu("晚餐",dishs3);
+        for(com.a1141705068qq.main.gson.Dish dish:dishes){
+            dishs3.add(new Dish(dish.getDis_name(),dish.getDis_price(),10));
+        }
+        DishMenu evening = new DishMenu("分类三",dishs3);
 
         ArrayList<Dish> dishs4 = new ArrayList<>();
         dishs4.add(new Dish("淋菜",1.0,10));
@@ -343,5 +345,40 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
     public void dialogDismiss() {
         showTotalPrice();
         rightAdapter.notifyDataSetChanged();
+    }
+
+    public void sendRequest(int id){
+        String dishUrl="http://67.216.210.216/dishes.php?id="+id;
+        HttpUtil.sendOkHttpRequest(dishUrl, new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(Shop_Activity.this,"获取菜品数据失败",Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                final String responseText=response.body().string();
+                List<com.a1141705068qq.main.gson.Dish> dishes= Utility.handleDishResponse(responseText);
+                settle(dishes);
+            }
+        });
+    }
+
+    public void settle(final List<com.a1141705068qq.main.gson.Dish> dishes){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mdishes=dishes;
+                initData(mdishes);
+                initView();
+                initAdapter();
+            }
+        });
     }
 }

@@ -2,6 +2,7 @@ package com.a1141705068qq.main.gzcsearchtest;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.a1141705068qq.class_one.R;
 import com.czp.searchmlist.mSearchLayout;
@@ -15,7 +16,7 @@ import java.util.List;
  */
 
 
-public class gzcsearchtest extends Activity {
+public class gzcsearchtest extends AppCompatActivity {
     private mSearchLayout msearchLy;
 
     protected void onCreate(Bundle savedInstanceState) {
