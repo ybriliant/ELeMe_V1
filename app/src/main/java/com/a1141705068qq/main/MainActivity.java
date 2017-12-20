@@ -59,15 +59,6 @@ public class MainActivity extends AppCompatActivity{
             mTabHost.addTab(tabSpec, fragmentArray[i], null);
 
         }
-        TextView tv=(TextView)findViewById(R.id.search_tv);
-        tv.setOnClickListener(new TextView.OnClickListener(){
-
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,gzcsearchtest.class);
-                startActivity(intent);
-            }
-        });
 
     }//end of initView
 
