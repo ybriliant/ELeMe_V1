@@ -34,7 +34,7 @@ public class gzcsearchtest extends Activity {
         msearchLy.initData(skills, skillHots, new mSearchLayout.setSearchCallBackListener() {
             @Override
             public void Search(String str) {
-                //进行数据库查询
+                //POST请求进行数据库查询
             }
             @Override
             public void Back() {
