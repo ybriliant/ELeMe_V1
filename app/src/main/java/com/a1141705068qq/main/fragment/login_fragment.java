@@ -47,7 +47,7 @@ public class login_fragment extends Fragment{
         passwordEdit=(EditText)view.findViewById(R.id.password);
         login=(Button)view.findViewById(R.id.login);
         rememberPass=(CheckBox)view.findViewById(R.id.remenber_pass);
-        isSucess="{\"success\":1}";
+        isSucess="{\"success\":0}";
         return view;
     }
 
@@ -96,7 +96,7 @@ public class login_fragment extends Fragment{
                             .build();
                     Response response=client.newCall(request).execute();
                     String responseData=response.body().string();
-                    if(responseData.equals(isSucess)) {
+                    if(!responseData.equals(isSucess)) {
                         sucess(account,password);
                         //Log.d("LoginActivity","1111");
                     }else{
