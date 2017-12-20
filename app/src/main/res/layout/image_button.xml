@@ -4,7 +4,6 @@
     android:layout_height="match_parent">
     <ImageView
         android:id="@+id/food_image"
-        android:src="@drawable/load"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="5"/>
