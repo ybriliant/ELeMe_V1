@@ -14,6 +14,7 @@ import com.a1141705068qq.class_one.R;
 import com.a1141705068qq.main.MainActivity;
 import com.a1141705068qq.main.ggb.LogoutActivity;
 import com.a1141705068qq.main.ggb.User_infoActivity;
+import com.a1141705068qq.main.gzcsearchtest.gzcsearchtest;
 
 public class FragmentPage4 extends Fragment implements View.OnClickListener{
 	private Button user_setting;

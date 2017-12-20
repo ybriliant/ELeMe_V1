@@ -17,19 +17,26 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.a1141705068qq.class_one.R;
+import com.a1141705068qq.main.MainActivity;
 import com.a1141705068qq.main.Shop_Activity;
+import com.a1141705068qq.main.util.HttpUtil;
+import com.a1141705068qq.main.util.Utility;
 import com.yanghan.fragment_tab.fragmentOneNeed.ShopAdapter;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
+
 import static android.media.CamcorderProfile.get;
 
 public class FragmentPage1 extends Fragment{
 	private View view;
-	private ImageView aaaa;
 	private ListView listView=null;
 
 	@Override
@@ -41,7 +48,7 @@ public class FragmentPage1 extends Fragment{
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState){
 		super.onActivityCreated(savedInstanceState);
-
+        //sendRequest();
 		listView=(ListView)view.findViewById(R.id.restaurant_list);
 		final List<Map<String, Object>> list=getData();
 		listView.setAdapter(new ShopAdapter(getActivity(),list));
@@ -53,16 +60,6 @@ public class FragmentPage1 extends Fragment{
 				Intent intent=new Intent(getActivity(),Shop_Activity.class);
 				startActivity(intent);
 				Toast.makeText(getContext(),"进入店铺",Toast.LENGTH_SHORT).show();
-			}
-		});
-
-		aaaa=(ImageView)view.findViewById(R.id.iv_icon1);
-		aaaa.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-
-				Intent intent=new Intent(getActivity(),Shop_Activity.class);
-				startActivity(intent);
 			}
 		});
 	}
@@ -83,5 +80,23 @@ public class FragmentPage1 extends Fragment{
 		}
 		return list;
 	}
+
+	public void sendRequest(int id){
+		String dishUrl="http://67.216.210.216/showrestaurant.php?id="+id;
+		HttpUtil.sendOkHttpRequest(dishUrl, new Callback() {
+			@Override
+			public void onFailure(Call call, IOException e) {
+				e.printStackTrace();
+			}
+
+			@Override
+			public void onResponse(Call call, Response response) throws IOException {
+				final String responseText=response.body().string();
+				List<com.a1141705068qq.main.gson.Restaurant> restaurants= Utility.handleRestaurantResponse(responseText);
+			}
+		});
+	}
+
+
 
 }

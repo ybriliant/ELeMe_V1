@@ -22,7 +22,8 @@
         <activity android:name="com.a1141705068qq.main.ggb.LogoutActivity" />
         <activity android:name="com.a1141705068qq.main.LoginActivity" />
         <activity android:name="com.a1141705068qq.main.Shop_Activity"/>
-        <activity android:name="com.a1141705068qq.main.ggb.User_infoActivity"></activity>
+        <activity android:name="com.a1141705068qq.main.ggb.User_infoActivity"/>
+        <activity android:name="com.a1141705068qq.main.gzcsearchtest.gzcsearchtest"/>
     </application>
 
 </manifest>
