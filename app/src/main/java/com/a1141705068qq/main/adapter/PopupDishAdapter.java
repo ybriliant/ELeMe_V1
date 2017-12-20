@@ -18,9 +18,6 @@ import com.a1141705068qq.main.model.ShopCart;
 
 import java.util.ArrayList;
 
-/**
- * Created by cheng on 16-12-23.
- */
 public class PopupDishAdapter extends RecyclerView.Adapter{
 
     private static String TAG = "PopupDishAdapter";

@@ -65,6 +65,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/backcolor">
                     <TextView
+                        android:id="@+id/search_tv"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -73,6 +74,7 @@
                         android:layout_marginRight="10dp"
                         android:background="#ffffff"
                         android:maxLines="1"
+                        android:clickable="true"
                         android:text="¤☍搜索商家、商品名称"
                         android:textSize="15dp"
                         android:textColor="#6a000000"

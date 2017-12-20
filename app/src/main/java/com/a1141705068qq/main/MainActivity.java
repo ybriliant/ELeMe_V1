@@ -1,5 +1,6 @@
 package com.a1141705068qq.main;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.a1141705068qq.class_one.R;
+import com.a1141705068qq.main.gzcsearchtest.gzcsearchtest;
 import com.yanghan.fragment_tab.FragmentPage1;
 import com.yanghan.fragment_tab.FragmentPage2;
 import com.yanghan.fragment_tab.FragmentPage3;
@@ -57,6 +59,15 @@ public class MainActivity extends AppCompatActivity{
             mTabHost.addTab(tabSpec, fragmentArray[i], null);
 
         }
+        TextView tv=(TextView)findViewById(R.id.search_tv);
+        tv.setOnClickListener(new TextView.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,gzcsearchtest.class);
+                startActivity(intent);
+            }
+        });
 
     }//end of initView
 
