@@ -48,6 +48,8 @@
                 android:layout_below="@+id/name_restaurant"
                 android:numStars="5"
                 android:rating="3"
+                android:isIndicator="true"
+                android:descendantFocusability="blocksDescendants"
                 style="@style/foodRatingBar">
             </RatingBar>
             <TextView

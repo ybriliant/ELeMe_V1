@@ -4,7 +4,7 @@
     android:shape="oval"
     android:useLevel="false" >
     <solid
-        android:color="@color/end"/>
+        android:color="@color/white"/>
     <size
         android:width="@dimen/shopping_cart_circle_size"
         android:height="@dimen/shopping_cart_circle_size"/>

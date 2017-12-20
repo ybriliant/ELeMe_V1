@@ -33,7 +33,7 @@ public class ShopAdapter extends BaseAdapter {
     /**
      * 组件集合，对应take_out_support_list.xml中的控件
      */
-    public final class Shop{
+    public class Shop{
         public ImageView image_restaurant;
         public TextView name_restaurant;
         //public RatingBar ratingbar1;

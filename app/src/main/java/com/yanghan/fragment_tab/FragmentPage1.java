@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,16 +14,18 @@ import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.a1141705068qq.class_one.R;
 import com.a1141705068qq.main.Shop_Activity;
-import com.yanghan.fragment_tab.fragmentOneNeed.Shop;
 import com.yanghan.fragment_tab.fragmentOneNeed.ShopAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static android.media.CamcorderProfile.get;
 
 public class FragmentPage1 extends Fragment{
 	private View view;
@@ -41,6 +44,16 @@ public class FragmentPage1 extends Fragment{
 		listView=(ListView)view.findViewById(R.id.restaurant_list);
 		final List<Map<String, Object>> list=getData();
 		listView.setAdapter(new ShopAdapter(getActivity(),list));
+
+		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				Map<String,Object> shop = list.get(position);
+				Intent intent=new Intent(getActivity(),Shop_Activity.class);
+				startActivity(intent);
+				Toast.makeText(getContext(),"进入店铺",Toast.LENGTH_SHORT).show();
+			}
+		});
 
 		aaaa=(ImageView)view.findViewById(R.id.iv_icon1);
 		aaaa.setOnClickListener(new View.OnClickListener() {
@@ -69,4 +82,5 @@ public class FragmentPage1 extends Fragment{
 		}
 		return list;
 	}
+
 }
