@@ -16,10 +16,6 @@ public class FragmentPage2 extends Fragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {	
 		view=inflater.inflate(R.layout.tab_fragment2, null);
 		refresh();
-	//	FoodView commend1=(FoodView)getActivity().findViewById(R.id.food_commend1);
-	//	ImageView imageView=(ImageView)commend1.findViewById(R.id.food_image);
-	//	imageView.setImageResource(R.drawable.hbg);
-	//	commend1.setMassage(R.drawable.hbg,"至尊七虾堡",12);
 		return view;
 	}
 	public void refresh(){
