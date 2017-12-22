@@ -78,8 +78,8 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         mdishes=new ArrayList<>();
         Intent intent=getIntent();
-        res_id=intent.getIntExtra("res_id",0);
-        sendRequest(1);
+        res_id=intent.getIntExtra("res_id",1);
+        sendRequest(res_id);
     }
 
     private void initView(){
@@ -162,35 +162,25 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
         dishMenuList = new ArrayList<>();
         ArrayList<Dish> dishs1 = new ArrayList<>();
         for(com.a1141705068qq.main.gson.Dish dish:dishes){
-            dishs1.add(new Dish(dish.getDis_name(),dish.getDis_price(),10));
+            dishs1.add(new Dish(dish.getDis_name(),dish.getDis_price(),10,dish.getDis_picture()));
         }
         DishMenu breakfast = new DishMenu("分类一",dishs1);
 
         ArrayList<Dish> dishs2 = new ArrayList<>();
         for(com.a1141705068qq.main.gson.Dish dish:dishes){
-            dishs2.add(new Dish(dish.getDis_name(),dish.getDis_price(),10));
+            dishs2.add(new Dish(dish.getDis_name(),dish.getDis_price(),10,dish.getDis_picture()));
         }
         DishMenu launch = new DishMenu("分类二",dishs2);
 
         ArrayList<Dish> dishs3 = new ArrayList<>();
         for(com.a1141705068qq.main.gson.Dish dish:dishes){
-            dishs3.add(new Dish(dish.getDis_name(),dish.getDis_price(),10));
+            dishs3.add(new Dish(dish.getDis_name(),dish.getDis_price(),10,dish.getDis_picture()));
         }
         DishMenu evening = new DishMenu("分类三",dishs3);
-
-        ArrayList<Dish> dishs4 = new ArrayList<>();
-        dishs4.add(new Dish("淋菜",1.0,10));
-        dishs4.add(new Dish("川菜",1.0,10));
-        dishs4.add(new Dish("湘菜",1.0,10));
-        dishs4.add(new Dish("粤菜",1.0,10));
-        dishs4.add(new Dish("赣菜",1.0,10));
-        dishs4.add(new Dish("东北菜",1.0,10));
-        DishMenu menu1 = new DishMenu("其他",dishs4);
 
         dishMenuList.add(breakfast);
         dishMenuList.add(launch);
         dishMenuList.add(evening);
-        dishMenuList.add(menu1);
     }
 
     private void initAdapter(){

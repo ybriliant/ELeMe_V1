@@ -9,14 +9,15 @@ public class Dish {
     private double dishPrice;
     private int dishAmount;
     private int dishRemain;
+    private String dishPic;
     //private String image_dish;
 
-    public Dish(String dishName, double dishPrice, int dishAmount/*,String image_dish*/){
+    public Dish(String dishName, double dishPrice, int dishAmount,String dishPic){
         this.dishName = dishName;
         this.dishPrice = dishPrice;
         this.dishAmount = dishAmount;
         this.dishRemain = dishAmount;
-        //this.image_dish = image_dish;
+        this.dishPic=dishPic;
     }
 
    /* public String getImage_dish() {
@@ -55,6 +56,14 @@ public class Dish {
         this.dishRemain = dishRemain;
     }
 
+    public void setDishPic(String dishPic){
+        this.dishPic=dishPic;
+    }
+
+    public String getDishPic(){
+        return dishPic;
+    }
+
     public int hashCode(){
         int code = this.dishName.hashCode()+(int)this.dishPrice;
         return code;
@@ -68,7 +77,8 @@ public class Dish {
                 this.dishName.equals(((Dish)obj).dishName) &&
                 this.dishPrice ==  ((Dish)obj).dishPrice &&
                 this.dishAmount == ((Dish)obj).dishAmount &&
-                this.dishRemain == ((Dish)obj).dishRemain;
+                this.dishRemain == ((Dish)obj).dishRemain&&
+                this.dishPic==((Dish)obj).dishPic;
                 //this.image_dish ==((Dish) obj).image_dish;
     }
 }

@@ -12,14 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="100dp">
 
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/collapsing_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -42,16 +34,15 @@
                         android:layout_width="50dp"
                         android:layout_height="match_parent"
                         android:gravity="bottom|left"
+                        android:clickable="true"
                         android:text="柳园21"
                         android:textSize="23dp"
                         android:maxLines="1"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="8"/>
-                    <!--
-                        android:drawableRight=""
-                        android:drawableLeft=""
-                        -->
+
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -71,7 +62,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/backcolor">
                     <TextView
-                        android:id="@+id/search_tv"
+                        android:id="@+id/search"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -94,7 +85,7 @@
                 app:layout_collapseMode="none">
             </android.support.v7.widget.Toolbar>
 
-        </android.support.design.widget.CollapsingToolbarLayout>
+       <!-- </android.support.design.widget.CollapsingToolbarLayout> -->
 
     </android.support.design.widget.AppBarLayout>
 

@@ -1,6 +1,7 @@
 package com.a1141705068qq.main.adapter;
 
 import android.content.Context;
+import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import com.a1141705068qq.class_one.R;
 import com.a1141705068qq.main.imp.ShopCartImp;
 import com.a1141705068qq.main.model.Dish;
 import com.a1141705068qq.main.model.ShopCart;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -50,6 +52,7 @@ public class PopupDishAdapter extends RecyclerView.Adapter{
         if(dish!=null) {
             dishholder.right_dish_name_tv.setText(dish.getDishName());
             dishholder.right_dish_price_tv.setText(dish.getDishPrice() + "");
+            Glide.with(context).load(dish.getDishPic()).into(dishholder.image_dish);
             int num = shopCart.getShoppingSingleMap().get(dish);
             dishholder.right_dish_account_tv.setText(num+"");
 
@@ -104,9 +107,11 @@ public class PopupDishAdapter extends RecyclerView.Adapter{
         private ImageView right_dish_remove_iv;
         private ImageView right_dish_add_iv;
         private TextView right_dish_account_tv;
+        private ImageView image_dish;
 
         public DishViewHolder(View itemView) {
             super(itemView);
+            image_dish=(ImageView)itemView.findViewById(R.id.image_dish);
             right_dish_name_tv = (TextView)itemView.findViewById(R.id.right_dish_name);
             right_dish_price_tv = (TextView)itemView.findViewById(R.id.right_dish_price);
             right_dish_layout = (LinearLayout)itemView.findViewById(R.id.right_dish_item);

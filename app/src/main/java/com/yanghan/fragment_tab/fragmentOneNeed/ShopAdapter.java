@@ -11,6 +11,8 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.a1141705068qq.class_one.R;
+import com.a1141705068qq.main.MainActivity;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 import java.util.Map;
@@ -36,7 +38,7 @@ public class ShopAdapter extends BaseAdapter {
     public class Shop{
         public ImageView image_restaurant;
         public TextView name_restaurant;
-        //public RatingBar ratingbar1;
+        public RatingBar ratingbar1;
         public TextView start_send;
         public TextView send_fee;
         public TextView arrive_time_restaurant;
@@ -72,7 +74,7 @@ public class ShopAdapter extends BaseAdapter {
             //获得组件，实例化组件
             convertView=layoutInflater.inflate(R.layout.take_out_support_item, parent,false);
             shop.image_restaurant=(ImageView) convertView.findViewById(R.id.image_restaurant);
-            //zujian.ratingbar1=(RatingBar) convertView.findViewById(R.id.ratingbar1) ;
+            shop.ratingbar1=(RatingBar) convertView.findViewById(R.id.ratingbar1) ;
             shop.name_restaurant=(TextView)convertView.findViewById(R.id.name_restaurant) ;
             shop.start_send=(TextView)convertView.findViewById(R.id.start_send) ;
             shop.send_fee=(TextView)convertView.findViewById(R.id.send_fee) ;
@@ -85,9 +87,11 @@ public class ShopAdapter extends BaseAdapter {
             shop=(Shop)convertView.getTag();
         }
         //绑定数据
-        shop.image_restaurant.setBackgroundResource((Integer)data.get(position).get("image_restaurant"));
+       // shop.image_restaurant.setBackgroundResource((Integer)data.get(position).get("image_restaurant"));
+        Glide.with(context).load(data.get(position).get("image_restaurant")).into(shop.image_restaurant);
         shop.name_restaurant.setText((String)data.get(position).get("name_restaurant"));
-        //zujian.ratingbar1.setNumStars(numStars);
+        shop.ratingbar1.setNumStars((Integer)data.get(position).get("ratingbar1"));
+        shop.ratingbar1.setRating((Float)data.get(position).get("ratingbar2"));
         shop.start_send.setText((String)data.get(position).get("start_send"));
         shop.send_fee.setText((String)data.get(position).get("send_fee"));
         shop.arrive_time_restaurant.setText((String)data.get(position).get("arrive_time_restaurant"));

@@ -19,13 +19,14 @@ import com.a1141705068qq.main.gzcsearchtest.gzcsearchtest;
 public class FragmentPage4 extends Fragment implements View.OnClickListener{
 	private Button user_setting;
 	private Button user_info;
+	private Button user_note;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
 		View view=inflater.inflate(R.layout.tab_fragment4, null);
 		user_setting=(Button) view.findViewById(R.id.user_setting);
-		user_info=(Button)view.findViewById(R.id.user_info);
+		user_note=(Button)view.findViewById(R.id.user_note);
 		user_info.setOnClickListener(this);
 		user_setting.setOnClickListener(this);
 		return view;
@@ -41,14 +42,16 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener{
 
 	@Override
 	public void onClick(View v){
+		Intent intent=null;
 		switch (v.getId()){
 			case R.id.user_setting:
-				Intent intent1=new Intent(getActivity(), LogoutActivity.class);
-				startActivity(intent1);
+				intent=new Intent(getActivity(), LogoutActivity.class);
+				startActivity(intent);
 				break;
 			case R.id.user_info:
-				Intent intent2=new Intent(getActivity(), User_infoActivity.class);
-				startActivity(intent2);
+				intent=new Intent(getActivity(), User_infoActivity.class);
+				startActivity(intent);
+			case R.id.user_note:
 			default:
 				break;
 		}
