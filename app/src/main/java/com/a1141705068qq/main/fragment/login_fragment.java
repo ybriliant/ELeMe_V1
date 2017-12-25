@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.a1141705068qq.class_one.R;
 import com.a1141705068qq.main.MainActivity;
+import com.a1141705068qq.main.gson.User;
+import com.a1141705068qq.main.util.Utility;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -97,8 +99,7 @@ public class login_fragment extends Fragment{
                     Response response=client.newCall(request).execute();
                     String responseData=response.body().string();
                     if(!responseData.equals(isSucess)) {
-                        sucess(account,password);
-                        //Log.d("LoginActivity","1111");
+                        sucess(account,password,responseData);
                     }else{
                         Looper.prepare();
                         Toast.makeText(getContext(), "account or password is invalid", Toast.LENGTH_SHORT).show();
@@ -112,7 +113,7 @@ public class login_fragment extends Fragment{
         }).start();
     }
 
-    private void sucess(String account,String password){
+    private void sucess(String account,String password,String responseData){
         editor=pref.edit();
         if(rememberPass.isChecked()){
             editor.putBoolean("remember_password",true);
@@ -122,7 +123,10 @@ public class login_fragment extends Fragment{
             editor.clear();
         }
         editor.apply();
-        //Log.d("LoginActivity","2222");
+        User user=new User();
+        user=Utility.handleUserResponse(responseData);
+        String user_name=user.getUser_name();
+        Log.d("LoginActivity",user_name);
         Intent intent=new Intent(getActivity(), MainActivity.class);
         startActivity(intent);
         getActivity().finish();

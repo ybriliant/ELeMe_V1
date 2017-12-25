@@ -181,7 +181,7 @@
             <ListView
                 android:id="@+id/restaurant_list"
                 android:layout_width="match_parent"
-                android:layout_height="1500dp"
+                android:layout_height="1900dp"
                 android:layout_gravity="center"
                 android:divider="@null"
                 android:background="@color/white"

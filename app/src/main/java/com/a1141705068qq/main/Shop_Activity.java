@@ -202,6 +202,7 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        Log.d("MainActivity","___leftAdapter.removeItemSelectedListener___");
         leftAdapter.removeItemSelectedListener(this);
     }
 
