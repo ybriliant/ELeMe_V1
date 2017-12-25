@@ -27,6 +27,7 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener{
 		View view=inflater.inflate(R.layout.tab_fragment4, null);
 		user_setting=(Button) view.findViewById(R.id.user_setting);
 		user_note=(Button)view.findViewById(R.id.user_note);
+		user_info=(Button)view.findViewById(R.id.user_info);
 		user_info.setOnClickListener(this);
 		user_setting.setOnClickListener(this);
 		return view;

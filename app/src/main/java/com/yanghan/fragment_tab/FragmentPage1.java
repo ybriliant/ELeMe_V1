@@ -58,7 +58,7 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener{
 		listView=(ListView)view.findViewById(R.id.restaurant_list);
 		search_tv=(TextView)view.findViewById(R.id.search);
 		search_tv.setOnClickListener(this);
-		sendRequest(1);
+		sendRequest();
 	}
 
 	@Override
@@ -74,26 +74,28 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener{
 	}
 
 
-	public List<Map<String, Object>> getData(Restaurant res){
+	public List<Map<String, Object>> getData(List<Restaurant> restaurants){
 		List<Map<String, Object>> list=new ArrayList<Map<String,Object>>();
-		for (int i=0;i<4;i++) {
-			Map<String, Object> map=new HashMap<String, Object>();
-			map.put("image_restaurant", res.getRes_picture());
-			map.put("name_restaurant", res.getRes_name());
-			map.put("start_send", "14:00");
-			map.put("send_fee", "介绍："+res.getRes_note());
-			map.put("arrive_time_restaurant", res.getRes_mark()+"分");
-			map.put("ratingbar2",(float)res.getRes_mark());
-			map.put("ratingbar1",5);
-			map.put("distant_restaurant", "1km");
-			map.put("abc", R.drawable.img5);
-			list.add(map);
+		for (int i=0;i<2;i++) {
+			for(Restaurant res:restaurants) {
+				Map<String, Object> map = new HashMap<String, Object>();
+				map.put("image_restaurant", res.getRes_picture());
+				map.put("name_restaurant", res.getRes_name());
+				map.put("start_send", "14:00");
+				map.put("send_fee", "介绍：" + res.getRes_note());
+				map.put("arrive_time_restaurant", res.getRes_mark() + "分");
+				map.put("ratingbar2", (float) res.getRes_mark());
+				map.put("ratingbar1", 5);
+				map.put("distant_restaurant", "1km");
+				map.put("abc", R.drawable.img5);
+				list.add(map);
+			}
 		}
 		return list;
 	}
 
-	public void sendRequest(final int id){
-		String resUrl="http://67.216.210.216/showrestaurant.php?id="+id;
+	public void sendRequest(){
+		String resUrl="http://67.216.210.216/searchforrestaurant.php";
 		HttpUtil.sendOkHttpRequest(resUrl, new Callback() {
 			@Override
 			public void onFailure(Call call, IOException e) {
@@ -109,17 +111,17 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener{
 			@Override
 			public void onResponse(Call call, Response response) throws IOException {
 				final String responseText=response.body().string();
-				final Restaurant res=Utility.handleRestaurantResponse(responseText);
+				final List<Restaurant> restaurants=Utility.handleRestaurantsResponse(responseText);
 				getActivity().runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
-						final List<Map<String, Object>> list=getData(res);
+						final List<Map<String, Object>> list=getData(restaurants);
 						listView.setAdapter(new ShopAdapter(getActivity(),list));
 						listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 							@Override
 							public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 								Map<String,Object> shop = list.get(position);
-								int res_id=Integer.parseInt(res.getRes_id());
+								int res_id=(position%6)+1;
 								Intent intent=new Intent(getActivity(),Shop_Activity.class);
 								intent.putExtra("res_id",res_id);
 								startActivity(intent);
