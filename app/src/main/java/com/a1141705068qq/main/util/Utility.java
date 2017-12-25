@@ -19,11 +19,31 @@ import java.util.List;
  */
 
 public class Utility {
-    public static List<Restaurant>handleRestaurantResponse(String jsonData){
+    /*public static Restaurant handleRestaurantResponse(String jsonData){
         Gson gson=new Gson();
-        List<Restaurant> restaurants=gson.fromJson(jsonData,new TypeToken<List<Restaurant>>(){
-        }.getType());
-        return restaurants;
+        Restaurant res=gson.fromJson(jsonData,Restaurant.class);
+        return res;
+    }*/
+
+    public static Restaurant handleRestaurantResponse(String jsonData){
+        if(!TextUtils.isEmpty(jsonData)){
+            try{
+                JSONArray jsonArray = new JSONArray(jsonData);
+                Restaurant res=new Restaurant();
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    res.setRes_id(jsonObject.getString("res_id"));
+                    res.setRes_name(jsonObject.getString("res_name"));
+                    res.setRes_note(jsonObject.getString("res_note"));
+                    res.setRes_mark(jsonObject.getInt("res_mark"));
+                    res.setRes_picture(jsonObject.getString("res_picture"));
+                    return res;
+                }
+            }catch (JSONException e){
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 
     public static List<Dish> handleDishResponse(String jsonData) {

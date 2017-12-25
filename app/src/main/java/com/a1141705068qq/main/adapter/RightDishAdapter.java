@@ -15,6 +15,7 @@ import com.a1141705068qq.main.imp.ShopCartImp;
 import com.a1141705068qq.main.model.Dish;
 import com.a1141705068qq.main.model.DishMenu;
 import com.a1141705068qq.main.model.ShopCart;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -82,6 +83,7 @@ public class RightDishAdapter extends RecyclerView.Adapter {
                 final Dish dish = getDishByPosition(position);
                 dishholder.right_dish_name_tv.setText(dish.getDishName());
                 dishholder.right_dish_price_tv.setText(dish.getDishPrice()+"");
+                Glide.with(mContext).load(dish.getDishPic()).into(dishholder.image_dish);
                 dishholder.right_dish_layout.setContentDescription(position+"");
 
                 int count = 0;
@@ -187,9 +189,11 @@ public class RightDishAdapter extends RecyclerView.Adapter {
         private ImageView right_dish_remove_iv;
         private ImageView right_dish_add_iv;
         private TextView right_dish_account_tv;
+        private ImageView image_dish;
 
         public DishViewHolder(View itemView) {
             super(itemView);
+            image_dish=(ImageView)itemView.findViewById(R.id.image_dish);
             right_dish_name_tv = (TextView)itemView.findViewById(R.id.right_dish_name);
             right_dish_price_tv = (TextView)itemView.findViewById(R.id.right_dish_price);
             right_dish_layout = (LinearLayout)itemView.findViewById(R.id.right_dish_item);
