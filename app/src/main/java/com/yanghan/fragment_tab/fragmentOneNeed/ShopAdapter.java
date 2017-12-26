@@ -84,6 +84,7 @@ public class ShopAdapter extends BaseAdapter {
         }else{
             shop=(Shop)convertView.getTag();
         }
+
         //绑定数据
         shop.image_restaurant.setBackgroundResource((Integer)data.get(position).get("image_restaurant"));
         shop.name_restaurant.setText((String)data.get(position).get("name_restaurant"));
