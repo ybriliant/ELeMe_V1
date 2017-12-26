@@ -38,9 +38,11 @@ public class login_fragment extends Fragment{
     private EditText passwordEdit;
     private Button login;
     private SharedPreferences pref;
+    private SharedPreferences upref;
     private SharedPreferences.Editor editor;
     private CheckBox rememberPass;
     private String isSucess;
+    private User user;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
@@ -57,6 +59,7 @@ public class login_fragment extends Fragment{
         super.onActivityCreated(savedInstanceState);
         //pref= PreferenceManager.getDefaultSharedPreferences(getActivity());
         pref=getActivity().getSharedPreferences("key",MODE_PRIVATE);
+        upref=getActivity().getSharedPreferences("user",MODE_PRIVATE);
         boolean isRemember=pref.getBoolean("remember_password",false);
         if(isRemember){
             String account=pref.getString("account","");
@@ -123,10 +126,14 @@ public class login_fragment extends Fragment{
             editor.clear();
         }
         editor.apply();
-        User user=new User();
         user=Utility.handleUserResponse(responseData);
-        String user_name=user.getUser_name();
-        Log.d("LoginActivity",user_name);
+        editor=upref.edit();
+        editor.putString("user_id",user.getUser_id());
+        editor.putString("user_name",user.getUser_name());
+        editor.putString("user_phone",user.getUser_phone());
+        editor.putString("user_picture",user.getUser_picture());
+        editor.putString("user_location",user.getUser_location());
+        editor.apply();
         Intent intent=new Intent(getActivity(), MainActivity.class);
         startActivity(intent);
         getActivity().finish();
