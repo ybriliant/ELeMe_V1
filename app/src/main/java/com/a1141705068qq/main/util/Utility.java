@@ -77,8 +77,14 @@ public class Utility {
     }
 
     public static User handleUserResponse(String jsonData){
-        Gson gson=new Gson();
-        User user=gson.fromJson(jsonData,User.class);
-        return user;
+        try {
+            Gson gson = new Gson();
+            List<User> users=gson.fromJson(jsonData,new TypeToken<List<User>>(){}.getType());
+            User user=users.get(0);
+            return user;
+        }catch (Exception e){
+             e.printStackTrace();
+        }
+        return null;
     }
 }
