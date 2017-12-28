@@ -88,7 +88,7 @@ public class ShopAdapter extends BaseAdapter {
         }
 
         //绑定数据
-       // shop.image_restaurant.setBackgroundResource((Integer)data.get(position).get("image_restaurant"));
+        // shop.image_restaurant.setBackgroundResource((Integer)data.get(position).get("image_restaurant"));
         Glide.with(context).load(data.get(position).get("image_restaurant")).into(shop.image_restaurant);
         shop.name_restaurant.setText((String)data.get(position).get("name_restaurant"));
         shop.ratingbar1.setNumStars((Integer)data.get(position).get("ratingbar1"));
