@@ -35,8 +35,7 @@ public class LogoutActivity extends AppCompatActivity implements View.OnClickLis
                 finish();
                 break;
             case R.id.arrow_back:
-                Intent intent2=new Intent(this, MainActivity.class);
-                startActivity(intent2);
+                finish();
                 break;
         }
     }

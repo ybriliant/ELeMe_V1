@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.a1141705068qq.class_one.R;
@@ -26,6 +28,7 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener{
 	private Button user_note;
 	private TextView user_name;
 	private TextView user_phone;
+	private ImageView face;
 	private SharedPreferences upref;
 	private SharedPreferences.Editor editor;
 	private User user;
@@ -42,6 +45,8 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener{
 		user_info=(Button)view.findViewById(R.id.user_info);
 		user_name=(TextView)view.findViewById(R.id.p4_user_name);
 		user_phone=(TextView)view.findViewById(R.id.p4_user_phone);
+		face=(ImageView)view.findViewById(R.id.p4_user_icon);
+		//face.setImageResource(R.drawable.qq);
 		return view;
 	}
 
