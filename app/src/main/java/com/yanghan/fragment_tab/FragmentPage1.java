@@ -3,6 +3,7 @@ package com.yanghan.fragment_tab;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -26,14 +27,21 @@ import com.a1141705068qq.main.util.HttpUtil;
 import com.a1141705068qq.main.util.Utility;
 import com.yanghan.fragment_tab.fragmentOneNeed.ShopAdapter;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 import static android.media.CamcorderProfile.get;
@@ -134,6 +142,5 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener{
 			}
 		});
 	}
-
 
 }
