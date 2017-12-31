@@ -44,7 +44,7 @@ public class ShopAdapter extends BaseAdapter {
         public TextView arrive_time_restaurant;
         public TextView distant_restaurant;
         public TextView discount_restaurant;
-        public ImageView abc;
+     //   public ImageView abc;
     }
     @Override
     public int getCount() {
@@ -81,7 +81,7 @@ public class ShopAdapter extends BaseAdapter {
             shop.arrive_time_restaurant=(TextView)convertView.findViewById(R.id.arrive_time_restaurant) ;
             shop.distant_restaurant=(TextView)convertView.findViewById(R.id.distant_restaurant) ;
             shop.discount_restaurant=(TextView)convertView.findViewById(R.id.discount_restaurant) ;
-            shop.abc=(ImageView) convertView.findViewById(R.id.abc);
+         //   shop.abc=(ImageView) convertView.findViewById(R.id.abc);
             convertView.setTag(shop);
         }else{
             shop=(Shop)convertView.getTag();
@@ -98,7 +98,7 @@ public class ShopAdapter extends BaseAdapter {
         shop.arrive_time_restaurant.setText((String)data.get(position).get("arrive_time_restaurant"));
         shop.distant_restaurant.setText((String)data.get(position).get("distant_restaurant"));
         shop.discount_restaurant.setText((String)data.get(position).get("discount_restaurant"));
-        shop.abc.setBackgroundResource((Integer)data.get(position).get("abc"));
+     //   shop.abc.setBackgroundResource((Integer)data.get(position).get("abc"));
         return convertView;
     }
 

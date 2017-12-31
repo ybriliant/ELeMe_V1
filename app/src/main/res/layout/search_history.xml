@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/search_history_ly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:id="@+id/search_history_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:text="历史搜索"
+                    android:layout_alignParentLeft="true"
+                    android:background="#ffffff"
+                    android:textSize="15sp"
+                    android:textColor="#000000"/>
+                <ImageButton
+                    android:id="@+id/clear_history_bn"
+                    android:background="#ffffff"
+                    android:src="@drawable/search_history_clear"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+
+                    android:scaleType="fitCenter"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/flowlayout_history"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:max_select="-1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="热门搜索"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:textSize="15sp"
+                android:textColor="#000000"/>
+
+            <com.zhy.view.flowlayout.TagFlowLayout
+                android:id="@+id/flowlayout_hot"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:max_select="-1" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
