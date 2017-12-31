@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.a1141705068qq.class_one.R;
+import com.bumptech.glide.Glide;
 
 /**
  * Created by Shinobu on 2017/12/20.
@@ -28,8 +29,8 @@ public class FoodView extends LinearLayout {
         price=(TextView)view.findViewById(R.id.cost_text);
     }
 
-    public void setMassage(int image_id,String food_name,String food_price){
-        image.setImageResource(image_id);
+    public void setMassage(String image_id,String food_name,String food_price){
+        Glide.with(getContext()).load(image_id).into(image);
         name.setText(food_name);
         price.setText(food_price);
     }

@@ -33,6 +33,8 @@ import android.widget.TextView;
 import com.a1141705068qq.class_one.BuildConfig;
 import com.a1141705068qq.class_one.R;
 import com.a1141705068qq.main.util.FileUtil;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.io.File;
 import java.io.IOException;
@@ -92,10 +94,12 @@ public class User_infoActivity extends AppCompatActivity implements View.OnClick
         faceLayout=(LinearLayout)findViewById(R.id.touxiang);
         faceLayout.setOnClickListener(this);
         upref=getSharedPreferences("user", Context.MODE_PRIVATE);
-         String name=upref.getString("user_name",null);
+        String name=upref.getString("user_name",null);
         String phone=upref.getString("user_phone",null);
-        if(name!=null)
+        if(name!=null) {
             user_name.setText(name);
+            Glide.with(User_infoActivity.this).load("http://67.216.210.216/upload/"+upref.getString("user_id",null)+".jpg").diskCacheStrategy( DiskCacheStrategy.NONE ).skipMemoryCache( true ).into(headImage1);
+        }
         if(phone!=null){
             user_phone.setText(phone.substring(0,3)+"****"+phone.substring(7,11));
         }
