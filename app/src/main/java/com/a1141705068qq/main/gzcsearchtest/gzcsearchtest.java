@@ -1,10 +1,14 @@
 package com.a1141705068qq.main.gzcsearchtest;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 
 import com.a1141705068qq.class_one.R;
+import com.a1141705068qq.main.dxd.SearchResult;
 import com.czp.searchmlist.mSearchLayout;
 
 import java.util.ArrayList;
@@ -24,6 +28,14 @@ public class gzcsearchtest extends AppCompatActivity {
         setContentView(R.layout.gzcsearchtest);
         msearchLy = (mSearchLayout)findViewById(R.id.msearchlayout);
         initData();
+        Button button_jump=(Button)findViewById(R.id.jump);
+        button_jump.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(gzcsearchtest.this, SearchResult.class);
+                startActivity(intent);
+            }
+        });
     }
 
     protected void initData() {
