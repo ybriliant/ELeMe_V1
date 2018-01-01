@@ -79,6 +79,16 @@
             android:textStyle="bold"
             android:visibility="gone"
             android:layout_marginLeft="@dimen/shopping_cart_total_price_left_magrin"/>
+        <Button
+            android:id="@+id/pay_right_away"
+            android:background="@color/green"
+            android:text="@string/quzhifu"
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="130dp"
+            android:layout_width="match_parent"
+            android:layout_height="49dp" />
     </LinearLayout>
 
     <FrameLayout
@@ -97,7 +107,7 @@
             android:src="@drawable/ic_shopping_cart_white_24dp"/>
     </FrameLayout>
 
-    <FrameLayout
+    <!--<FrameLayout
         android:id="@+id/shopping_cart_layout_topay"
         android:layout_width="100dp"
         android:layout_height="49dp"
@@ -113,7 +123,7 @@
             android:textSize="17dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </FrameLayout>
+    </FrameLayout>-->
 
     <TextView
         android:id="@+id/lineview"

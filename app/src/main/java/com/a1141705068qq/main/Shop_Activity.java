@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -42,6 +43,7 @@ import com.a1141705068qq.main.wiget.ShopCartDialog;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -66,9 +68,18 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
     private FrameLayout shopingCartLayout;
     private TextView totalPriceTextView;
     private TextView totalPriceNumTextView;
+    private Button pay_right_away;
     private RelativeLayout mainLayout;
     private int res_id;
     private List<com.a1141705068qq.main.gson.Dish> mdishes;
+
+    public double jiage;
+    public int shuliang;
+    public int NumA;
+    public String [] name__;
+    public String [] price__;
+    public String [] account__;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +105,7 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
         shopingCartLayout = (FrameLayout) findViewById(R.id.shopping_cart_layout);
         totalPriceTextView = (TextView)findViewById(R.id.shopping_cart_total_tv);
         totalPriceNumTextView = (TextView)findViewById(R.id.shopping_cart_total_num);
-
+        pay_right_away = (Button)findViewById(R.id.pay_right_away);
         leftMenu.setLayoutManager(new LinearLayoutManager(this));
         rightMenu.setLayoutManager(new LinearLayoutManager(this));
 
@@ -155,6 +166,36 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
                 showCart(view);
             }
         });
+
+        pay_right_away.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(shopCart!=null && shopCart.getShoppingAccount()>0){
+                    Intent payintent = new Intent(Shop_Activity.this,PayActivity.class);
+                    payintent.putExtra("send_adress","这里");
+                    payintent.putExtra("custom_name_phone","yanghan123456");
+                    payintent.putExtra("num_of_food",shuliang);//红圈上的数字
+                    payintent.putExtra("price_food",jiage);//黑栏目上的总价格
+                    payintent.putExtra("name_restaurant",getnameof_restaurant());
+                    payintent.putExtra("num_kind_of_food",NumA);
+
+                    Bundle bd=new Bundle();
+                    bd.putStringArray("pose_name", name__);
+                    bd.putStringArray("pose_price", price__);
+                    bd.putStringArray("pose_account", account__);
+                    payintent.putExtras(bd);
+                    startActivity(payintent);
+                }
+                else{Toast.makeText(Shop_Activity.this,"您未点餐",Toast.LENGTH_SHORT).show();}
+            }
+        });
+    }
+
+
+    private String getnameof_restaurant(){
+        Intent intent = getIntent();
+        String data_name_restaurant = intent.getStringExtra("name_restaurant");
+        return data_name_restaurant;
     }
 
     private void initData(List<com.a1141705068qq.main.gson.Dish> dishes){
@@ -302,12 +343,15 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
         showTotalPrice();
     }
 
+
     private void showTotalPrice(){
         if(shopCart!=null && shopCart.getShoppingTotalPrice()>0){
             totalPriceTextView.setVisibility(View.VISIBLE);
             totalPriceTextView.setText("￥ "+shopCart.getShoppingTotalPrice());
+            jiage = shopCart.getShoppingTotalPrice();//获取总价格
             totalPriceNumTextView.setVisibility(View.VISIBLE);
             totalPriceNumTextView.setText(""+shopCart.getShoppingAccount());
+            shuliang = shopCart.getShoppingAccount();//获取总数量
 
         }else {
             totalPriceTextView.setVisibility(View.GONE);
@@ -329,6 +373,10 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
             params.gravity = Gravity.BOTTOM;
             params.dimAmount =0.5f;
             window.setAttributes(params);
+            NumA = dialog.getNum_kind();
+            name__ = dialog.get__name();
+            price__ = dialog.get__price();
+            account__ = dialog.get__account();
         }
     }
 

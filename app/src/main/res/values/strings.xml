@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidFrame_1</string>
+    <string name="app_name">饿了么</string>
     <string name="search">发现</string>
     <string name="find_more">查看更多></string>
     <string name="support">推荐商家></string>
@@ -29,7 +29,7 @@
     <string name="niming">匿名购买</string>
     <string name="canjushuliang">餐具份数/口味偏好</string>
     <string name="huanbao">马上助力环保</string>
-    <string name="gotopay">去支付</string>
+    <string name="gotopay">支付</string>
     <string name="rmb">¥</string>
     <string name="chaofan">炒饭</string>
     <string name="banli">板栗</string>

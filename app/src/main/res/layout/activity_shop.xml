@@ -30,6 +30,15 @@
             android:textStyle="bold"
             android:visibility="gone"
             android:layout_marginLeft="@dimen/shopping_cart_total_price_left_magrin"/>
+        <Button
+            android:id="@+id/pay_right_away"
+            android:background="@color/green"
+            android:text="@string/quzhifu"
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            android:layout_marginLeft="130dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
     <LinearLayout

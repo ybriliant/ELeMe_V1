@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/pay_main"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:fab="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.a1141705068qq.main.PayActivity"
     android:background="@color/gray">
 
     <android.support.design.widget.AppBarLayout
@@ -74,7 +75,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -121,7 +122,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_toRightOf="@+id/arrive_time"
-                        android:text="]"/>
+                        android:text="送达]"/>
                     <TextView
                         android:id="@+id/fengniao"
                         android:layout_width="wrap_content"
@@ -179,13 +180,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <view
+                    <View
                         android:layout_width="35dp"
                         android:layout_height="2dp"
                         android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:layout_marginLeft="15dp">
-                    </view>
+                        android:layout_marginLeft="15dp"
+                        android:background="@color/gray">
+                    </View>
                     <TextView
                         android:id="@+id/name_restaurant"
                         android:layout_width="wrap_content"
@@ -195,14 +197,15 @@
                         android:layout_weight="1"
                         android:textStyle="bold"
                         android:textColor="@color/black"/>
-                    <view
+                    <View
+                        android:background="@color/gray"
                         android:layout_width="35dp"
                         android:layout_height="2dp"
                         android:layout_marginLeft="15dp"
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:layout_marginRight="15dp">
-                    </view>
+                    </View>
                 </LinearLayout>
                 <TextView
                     android:layout_width="wrap_content"
@@ -211,7 +214,8 @@
                     android:layout_marginTop="10dp"
                     android:textSize="12dp"
                     android:layout_marginLeft="15dp"/>
-                <view
+                <View
+                    android:background="@color/gray"
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
                     android:layout_marginLeft="15dp"
@@ -219,61 +223,13 @@
                     android:layout_weight="1"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="5dp">
-                </view>
+                </View>
                 <LinearLayout
+                    android:id="@+id/pay_menu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/haohua"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="10dp"
-                        android:textSize="12dp"
-                        android:layout_marginLeft="15dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="×"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="10dp"
-                        android:textSize="12dp"
-                        android:layout_marginLeft="150dp"/>
-                    <TextView
-                        android:id="@+id/num_of_food"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="10dp"
-                        android:textSize="12dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/rmb"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="10dp"
-                        android:textSize="12dp"
-                        android:layout_marginLeft="40dp"/>
-                    <TextView
-                        android:id="@+id/sum_price_food"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="12"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="10dp"
-                        android:textSize="12dp"/>
+                    android:orientation="vertical">
                 </LinearLayout>
-                <view
-                    android:layout_width="match_parent"
-                    android:layout_height="0.1dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="5dp">
-                </view>
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -306,7 +262,8 @@
                         android:layout_marginTop="10dp"
                         android:textSize="12dp" />
                 </RelativeLayout>
-                <view
+                <View
+                    android:background="@color/gray"
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
                     android:layout_marginLeft="15dp"
@@ -314,7 +271,7 @@
                     android:layout_weight="1"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="5dp">
-                </view>
+                </View>
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -347,7 +304,8 @@
                         android:layout_marginTop="10dp"
                         android:textSize="12dp" />
                 </RelativeLayout>
-                <view
+                <View
+                    android:background="@color/gray"
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
                     android:layout_marginLeft="15dp"
@@ -355,7 +313,7 @@
                     android:layout_weight="1"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="5dp">
-                </view>
+                </View>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -363,7 +321,8 @@
                     android:textSize="12dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="15dp"/>
-                <view
+                <View
+                    android:background="@color/gray"
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
                     android:layout_marginLeft="15dp"
@@ -371,7 +330,9 @@
                     android:layout_weight="1"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="5dp">
-                </view><view
+                </View>
+                <View
+                    android:background="@color/gray"
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
                 android:layout_marginLeft="15dp"
@@ -379,7 +340,7 @@
                 android:layout_weight="1"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="1.5dp">
-            </view>
+                </View>
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -411,7 +372,8 @@
                         android:src="@drawable/back_icon"
                         android:layout_alignParentRight="true"/>
                 </RelativeLayout>
-                <view
+                <View
+                    android:background="@color/gray"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginLeft="15dp"
@@ -419,8 +381,9 @@
                     android:layout_weight="1"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="5dp">
-                </view>
-                <view
+                </View>
+                <View
+                    android:background="@color/gray"
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
                     android:layout_marginLeft="15dp"
@@ -428,7 +391,7 @@
                     android:layout_weight="1"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="1.5dp">
-                </view>
+                </View>
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -495,9 +458,10 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                    <view
+                    <View
+                        android:background="@color/gray"
                         android:layout_width="match_parent"
-                        android:layout_height="0.1dp"></view>
+                        android:layout_height="0.1dp"></View>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -518,9 +482,10 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                    <view
+                    <View
+                        android:background="@color/gray"
                         android:layout_width="match_parent"
-                        android:layout_height="0.1dp"></view>
+                        android:layout_height="0.1dp"></View>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -548,10 +513,13 @@
                         android:src="@drawable/back_icon"
                         android:layout_alignParentRight="true"/>
                 </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"></LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
-    </android.support.v4.widget.NestedScrollView>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -569,6 +537,7 @@
             android:background="@color/tv_gray"
             android:textStyle="bold" />
         <TextView
+            android:id="@+id/all_fee_two"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="5"
@@ -579,6 +548,7 @@
             android:background="@color/tv_gray"
             android:textStyle="bold" />
         <Button
+            android:id="@+id/payfinal"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:background="@color/green"

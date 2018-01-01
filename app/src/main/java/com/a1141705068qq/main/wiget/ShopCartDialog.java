@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import com.a1141705068qq.class_one.R;
 import com.a1141705068qq.main.adapter.PopupDishAdapter;
 import com.a1141705068qq.main.imp.ShopCartImp;
+import com.a1141705068qq.main.model.Dish;
 import com.a1141705068qq.main.model.ShopCart;
 
 
@@ -29,9 +31,15 @@ public class ShopCartDialog extends Dialog implements View.OnClickListener,ShopC
     private ShopCart shopCart;
     private TextView totalPriceTextView;
     private TextView totalPriceNumTextView;
+    private Button pay_right_away;
     private RecyclerView recyclerView;
     private PopupDishAdapter dishAdapter;
     private ShopCartDialogImp shopCartDialogImp;
+
+    public int num_kind;//选的菜的种类数
+    private static String[] __name = {"a", "b", "c", "d", "e"};
+    private static String[] __price = {"a", "b", "c", "d", "e"};
+    private static String[] __account = {"a", "b", "c", "d", "e"};
 
     public ShopCartDialog(Context context, ShopCart shopCart, int themeResId) {
         super(context,themeResId);
@@ -48,6 +56,7 @@ public class ShopCartDialog extends Dialog implements View.OnClickListener,ShopC
         bottomLayout = (LinearLayout)findViewById(R.id.shopping_cart_bottom);
         totalPriceTextView = (TextView)findViewById(R.id.shopping_cart_total_tv);
         totalPriceNumTextView = (TextView)findViewById(R.id.shopping_cart_total_num);
+        pay_right_away = (Button)findViewById(R.id.pay_right_away);
         recyclerView = (RecyclerView)findViewById(R.id.recycleview);
         shopingcartLayout.setOnClickListener(this);
         bottomLayout.setOnClickListener(this);
@@ -57,6 +66,35 @@ public class ShopCartDialog extends Dialog implements View.OnClickListener,ShopC
         recyclerView.setAdapter(dishAdapter);
         dishAdapter.setShopCartImp(this);
         showTotalPrice();
+        num_kind = dishAdapter.getItemCount();
+
+        //获取数据
+        /*for(int i = 0;i<num_kind;i++){
+            //View view = recyclerView.getChildAt(0);
+            View view = recyclerView.getLayoutManager().findViewByPosition(i);
+            TextView _name = (TextView) view.findViewById(R.id.right_dish_name);
+            TextView _price = (TextView) view.findViewById(R.id.right_dish_price);
+            TextView _account = (TextView) view.findViewById(R.id.right_dish_account);
+            __name[i] = _name.getText().toString();
+            __price[i] = _price.getText().toString();
+            __account[i] = _account.getText().toString();
+        }*/
+    }
+
+    public String[] get__name(){
+        return __name;
+    }
+
+    public String[] get__price(){
+        return __price;
+    }
+
+    public String[] get__account(){
+        return __account;
+    }
+
+    public int getNum_kind(){
+        return num_kind;
     }
 
     @Override
