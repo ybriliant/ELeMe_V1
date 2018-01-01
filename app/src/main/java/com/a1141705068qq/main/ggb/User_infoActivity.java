@@ -1,8 +1,11 @@
 package com.a1141705068qq.main.ggb;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
@@ -30,10 +33,22 @@ import android.widget.TextView;
 import com.a1141705068qq.class_one.BuildConfig;
 import com.a1141705068qq.class_one.R;
 import com.a1141705068qq.main.util.FileUtil;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 import static com.a1141705068qq.main.util.FileUtil.getRealFilePathFromUri;
 
@@ -61,15 +76,33 @@ public class User_infoActivity extends AppCompatActivity implements View.OnClick
 
     private Button back;
 
+    private SharedPreferences upref;
+
+    private TextView user_name;
+
+    private TextView user_phone;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_info);
         headImage1 = (ImageView) findViewById(R.id.user_face);
+        user_name=(TextView)findViewById(R.id.user_info_name);
+        user_phone=(TextView)findViewById(R.id.user_info_phone);
         back=(Button)findViewById(R.id.user_info_back);
         back.setOnClickListener(this);
         faceLayout=(LinearLayout)findViewById(R.id.touxiang);
         faceLayout.setOnClickListener(this);
+        upref=getSharedPreferences("user", Context.MODE_PRIVATE);
+        String name=upref.getString("user_name",null);
+        String phone=upref.getString("user_phone",null);
+        if(name!=null) {
+            user_name.setText(name);
+            Glide.with(User_infoActivity.this).load("http://67.216.210.216/upload/"+upref.getString("user_id",null)+".jpg").diskCacheStrategy( DiskCacheStrategy.NONE ).skipMemoryCache( true ).into(headImage1);
+        }
+        if(phone!=null){
+            user_phone.setText(phone.substring(0,3)+"****"+phone.substring(7,11));
+        }
     }
 
     @Override
@@ -181,7 +214,7 @@ public class User_infoActivity extends AppCompatActivity implements View.OnClick
 
 
     private void gotoCamera() {
-        Log.d("evan", "*****************打开相机********************");
+        Log.d("User_infoActivity", "*****************打开相机********************");
         //创建拍照存储的图片文件
         tempFile = new File(FileUtil.checkDirPath(Environment.getExternalStorageDirectory().getPath() + "/image/"), System.currentTimeMillis() + ".jpg");
 
@@ -221,13 +254,16 @@ public class User_infoActivity extends AppCompatActivity implements View.OnClick
                     }
                     String cropImagePath = getRealFilePathFromUri(getApplicationContext(), uri);
                     Bitmap bitMap = BitmapFactory.decodeFile(cropImagePath);
+                    if(tempFile==null){
+                        tempFile=new File(cropImagePath);
+                    }
                     if (type == 1) {
                         headImage1.setImageBitmap(bitMap);
                     } else {
                         headImage2.setImageBitmap(bitMap);
                     }
                     //此处后面可以将bitMap转为二进制上传后台网络
-                    //......
+                    uploadMultiFile();
                 }
                 break;
         }
@@ -244,6 +280,57 @@ public class User_infoActivity extends AppCompatActivity implements View.OnClick
         intent.putExtra("type", type);
         intent.setData(uri);
         startActivityForResult(intent, REQUEST_CROP_PHOTO);
+    }
+
+    private void uploadMultiFile() {//将图片发送到服务器
+        final String url = "http://67.216.210.216/upload.php";
+        RequestBody fileBody = RequestBody.create(MediaType.parse("application/octet-stream"),tempFile);
+        RequestBody requestBody = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("image", upref.getString("user_id",null)+".jpg", fileBody)
+                .build();
+        Request request = new Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build();
+
+
+        final okhttp3.OkHttpClient.Builder httpBuilder = new OkHttpClient.Builder();
+        OkHttpClient okHttpClient  = httpBuilder
+                //设置超时
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
+                .build();
+        okHttpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.e("User_infoActivity", "uploadMultiFile() e=" + e);
+            }
+
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Log.i("User_infoActivity", "uploadMultiFile() response=" + response.body().string());
+            }
+        });
+    }
+
+    private File uriFile(Uri uri) {
+        String img_path;
+        String[] proj = {MediaStore.Images.Media.DATA};
+        Cursor actualimagecursor = managedQuery(uri, proj, null,
+                null, null);
+        if (actualimagecursor == null) {
+            img_path = uri.getPath();
+        } else {
+            int actual_image_column_index = actualimagecursor
+                    .getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            actualimagecursor.moveToFirst();
+            img_path = actualimagecursor
+                    .getString(actual_image_column_index);
+        }
+        File file = new File(img_path);
+        return file;
     }
 
 }

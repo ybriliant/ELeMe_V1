@@ -3,6 +3,9 @@ package com.a1141705068qq.main.flowlayout;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,10 +20,13 @@ import com.a1141705068qq.class_one.R;
 import com.a1141705068qq.main.flowlayout.FlowLayout;
 import com.a1141705068qq.main.flowlayout.TagAdapter;
 import com.a1141705068qq.main.flowlayout.TagFlowLayout;
+import com.a1141705068qq.main.fragment.SearchLayoutFragment;
+import com.a1141705068qq.main.fragment.SearchResultFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
+import com.a1141705068qq.main.fragment.SearchResultFragment;
 
 public class searchactivity extends AppCompatActivity {
 
@@ -96,6 +102,7 @@ public class searchactivity extends AppCompatActivity {
         editText = (ClearableEditText) findViewById(R.id.edt);
         button = (Button) findViewById(R.id.btn);
         strings = new ArrayList<>();
+        replaceFragment(new SearchLayoutFragment());
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +124,7 @@ public class searchactivity extends AppCompatActivity {
 
 
                 handler.sendEmptyMessageDelayed(1, 0);
+                replaceFragment(new SearchResultFragment());
             }
         });
 
@@ -128,5 +136,11 @@ public class searchactivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+    private void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        FragmentTransaction transaction=fragmentManager.beginTransaction();
+        transaction.replace(R.id.frame_layout,fragment);
+        transaction.commit();
     }
 }

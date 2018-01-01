@@ -21,6 +21,8 @@ import com.a1141705068qq.main.ggb.LogoutActivity;
 import com.a1141705068qq.main.ggb.User_infoActivity;
 import com.a1141705068qq.main.gson.User;
 import com.a1141705068qq.main.gzcsearchtest.gzcsearchtest;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 public class FragmentPage4 extends Fragment implements View.OnClickListener{
 	private Button user_setting;
@@ -46,7 +48,6 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener{
 		user_name=(TextView)view.findViewById(R.id.p4_user_name);
 		user_phone=(TextView)view.findViewById(R.id.p4_user_phone);
 		face=(ImageView)view.findViewById(R.id.p4_user_icon);
-		//face.setImageResource(R.drawable.qq);
 		return view;
 	}
 
@@ -61,6 +62,7 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener{
 		user_name.setText(name);
 		if(phone!=null){
 			user_phone.setText(phone.substring(0,3)+"****"+phone.substring(7,11));
+			Glide.with(this).load("http://67.216.210.216/upload/"+upref.getString("user_id",null)+".jpg"+"?").diskCacheStrategy( DiskCacheStrategy.NONE ).skipMemoryCache( true ).into(face);
 		}
 	}
 
