@@ -24,4 +24,8 @@
     <color name="blue_toolbar">#2075f4</color>
     <color name="white_touming">#cfffffff</color>
     <color name="all_touming">#00ffffff</color>
+    <color name="commom_background">#f3f3f3</color>
+    <color name="font_blue">#42369a</color>
+    <color name="font_common_1">#424242</color>
+    <color name="font_common_2">#a1a1a1</color>
 </resources>

@@ -3,13 +3,25 @@
     package="com.a1141705068qq.class_one">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/appicon"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.a1141705068qq.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
         <activity android:name="com.yanghan.welcomepage.WelcomePage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,10 +33,11 @@
         <activity android:name="com.yanghan.appguide.AppGuide" />
         <activity android:name="com.a1141705068qq.main.ggb.LogoutActivity" />
         <activity android:name="com.a1141705068qq.main.LoginActivity" />
-        <activity android:name="com.a1141705068qq.main.Shop_Activity"/>
-        <activity android:name="com.a1141705068qq.main.ggb.User_infoActivity"/>
-        <activity android:name="com.a1141705068qq.main.gzcsearchtest.gzcsearchtest"/>
-        <activity android:name="com.a1141705068qq.main.PayActivity"/>
+        <activity android:name="com.a1141705068qq.main.Shop_Activity" />
+        <activity android:name="com.a1141705068qq.main.ggb.User_infoActivity" />
+        <activity android:name="com.a1141705068qq.main.gzcsearchtest.gzcsearchtest" />
+        <activity android:name="com.a1141705068qq.main.ggb.ClipImageActivity" />
+        <activity android:name="com.a1141705068qq.main.dxd.SearchResult"></activity>
     </application>
 
 </manifest>
