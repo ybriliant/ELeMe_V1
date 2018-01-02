@@ -120,6 +120,7 @@ public class ShopCartDialog extends Dialog implements View.OnClickListener,ShopC
             totalPriceNumTextView.setVisibility(View.GONE);
         }
     }
+    //
 
     private void animationShow(int mDuration) {
         AnimatorSet animatorSet = new AnimatorSet();
