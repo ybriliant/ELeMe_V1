@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Created by cheng on 16-11-12.
  */
-public class ShopCart {
+public class ShopCart{
     private int shoppingAccount;//商品总数
     private double shoppingTotalPrice;//商品总价钱
     private Map<Dish,Integer> shoppingSingle;//单个物品的总价价钱

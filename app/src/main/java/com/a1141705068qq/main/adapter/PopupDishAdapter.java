@@ -29,11 +29,6 @@ public class PopupDishAdapter extends RecyclerView.Adapter{
     private ArrayList<Dish> dishList;
     private ShopCartImp shopCartImp;
 
-    private static String[] name____ = {"a1", "b1", "c1", "d1", "e1"};
-    private static Double[] price____ = {1.0,1.0,1.0,1.0,1.0};
-    private static int[] account____ = {1,1,1,1,1};
-
-
     public PopupDishAdapter(Context context, ShopCart shopCart){
         this.shopCart = shopCart;
         this.context = context;

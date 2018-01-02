@@ -1,9 +1,11 @@
 package com.a1141705068qq.main.model;
 
+import java.io.Serializable;
+
 /**
  * Created by cheng on 16-11-10.
  */
-public class Dish {
+public class Dish implements Serializable {
 
     private String dishName;
     private double dishPrice;

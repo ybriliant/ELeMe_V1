@@ -132,6 +132,9 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener{
 								int res_id=(position%6)+1;
 								Intent intent=new Intent(getActivity(),Shop_Activity.class);
 								intent.putExtra("res_id",res_id);
+								Restaurant res=restaurants.get(res_id-1);
+								String name=res.getRes_name();
+								intent.putExtra("name_restaurant",name);
 								startActivity(intent);
 								Toast.makeText(getContext(),"进入店铺",Toast.LENGTH_SHORT).show();
 							}

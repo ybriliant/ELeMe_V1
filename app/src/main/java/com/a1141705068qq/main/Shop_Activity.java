@@ -41,7 +41,9 @@ import com.a1141705068qq.main.wiget.PointFTypeEvaluator;
 import com.a1141705068qq.main.wiget.ShopCartDialog;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -75,10 +77,11 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
 
     public double jiage;
     public int shuliang;
-    public int NumA;
+    public int NumA;;
     public String [] name__;
     public String [] price__;
     public String [] account__;
+    private Map<Dish,Integer> shoppingSinglepass;
 
 
     @Override
@@ -178,12 +181,7 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
                     payintent.putExtra("price_food",jiage);//黑栏目上的总价格
                     payintent.putExtra("name_restaurant",getnameof_restaurant());
                     payintent.putExtra("num_kind_of_food",NumA);
-
-                    Bundle bd=new Bundle();
-                    bd.putStringArray("pose_name", name__);
-                    bd.putStringArray("pose_price", price__);
-                    bd.putStringArray("pose_account", account__);
-                    payintent.putExtras(bd);
+                    payintent.putExtra("singlemessage",(Serializable)shoppingSinglepass);
                     startActivity(payintent);
                 }
                 else{Toast.makeText(Shop_Activity.this,"您未点餐",Toast.LENGTH_SHORT).show();}
@@ -344,6 +342,7 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
     }
 
 
+
     private void showTotalPrice(){
         if(shopCart!=null && shopCart.getShoppingTotalPrice()>0){
             totalPriceTextView.setVisibility(View.VISIBLE);
@@ -352,7 +351,9 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
             totalPriceNumTextView.setVisibility(View.VISIBLE);
             totalPriceNumTextView.setText(""+shopCart.getShoppingAccount());
             shuliang = shopCart.getShoppingAccount();//获取总数量
-
+            shoppingSinglepass = shopCart.getShoppingSingleMap();
+            //shishi = shopCart.getDishAccount();
+            //shoppingSinglee_xcha = shopCart.getShoppingSingleMaptwo();
         }else {
             totalPriceTextView.setVisibility(View.GONE);
             totalPriceNumTextView.setVisibility(View.GONE);
@@ -374,9 +375,9 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
             params.dimAmount =0.5f;
             window.setAttributes(params);
             NumA = dialog.getNum_kind();
-            name__ = dialog.get__name();
-            price__ = dialog.get__price();
-            account__ = dialog.get__account();
+            //name__ = dialog.get__name();
+            //price__ = dialog.get__price();
+            //account__ = dialog.get__account();
         }
     }
 
