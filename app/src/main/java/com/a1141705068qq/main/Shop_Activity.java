@@ -77,7 +77,6 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
 
     public double jiage;
     public int shuliang;
-    public int NumA;;
     public String [] name__;
     public String [] price__;
     public String [] account__;
@@ -176,13 +175,12 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
                 if(shopCart!=null && shopCart.getShoppingAccount()>0){
                     Intent payintent = new Intent(Shop_Activity.this,PayActivity.class);
                     payintent.putExtra("send_adress","这里");
-                    payintent.putExtra("custom_name_phone","yanghan123456");
                     payintent.putExtra("num_of_food",shuliang);//红圈上的数字
                     payintent.putExtra("price_food",jiage);//黑栏目上的总价格
                     payintent.putExtra("name_restaurant",getnameof_restaurant());
-                    payintent.putExtra("num_kind_of_food",NumA);
                     payintent.putExtra("singlemessage",(Serializable)shoppingSinglepass);
                     startActivity(payintent);
+                    finish();
                 }
                 else{Toast.makeText(Shop_Activity.this,"您未点餐",Toast.LENGTH_SHORT).show();}
             }
@@ -374,10 +372,6 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
             params.gravity = Gravity.BOTTOM;
             params.dimAmount =0.5f;
             window.setAttributes(params);
-            NumA = dialog.getNum_kind();
-            //name__ = dialog.get__name();
-            //price__ = dialog.get__price();
-            //account__ = dialog.get__account();
         }
     }
 

@@ -4,16 +4,28 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.a1141705068qq.class_one.R;
 import com.a1141705068qq.main.dxd.SearchResult;
+import com.a1141705068qq.main.gson.Restaurant;
+import com.a1141705068qq.main.util.HttpUtil;
+import com.a1141705068qq.main.util.Utility;
 import com.czp.searchmlist.mSearchLayout;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 /**
  * Created by governormars on 2017/12/20.
@@ -28,14 +40,6 @@ public class gzcsearchtest extends AppCompatActivity {
         setContentView(R.layout.gzcsearchtest);
         msearchLy = (mSearchLayout)findViewById(R.id.msearchlayout);
         initData();
-        Button button_jump=(Button)findViewById(R.id.jump);
-        button_jump.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(gzcsearchtest.this, SearchResult.class);
-                startActivity(intent);
-            }
-        });
     }
 
     protected void initData() {
@@ -49,6 +53,7 @@ public class gzcsearchtest extends AppCompatActivity {
             @Override
             public void Search(String str) {
                 //POST请求进行数据库查询
+                sendRequest(str);
             }
             @Override
             public void Back() {
@@ -62,6 +67,35 @@ public class gzcsearchtest extends AppCompatActivity {
             @Override
             public void SaveOldData(ArrayList<String> AlloldDataList) {
                 //保存所有的搜索记录
+            }
+        });
+    }
+
+    protected void sendRequest(String str){
+        String resUrl="http://67.216.210.216/searchforrestaurant.php";
+        RequestBody requestBody=new FormBody.Builder()
+                .add("keywords",str)
+                .build();
+        HttpUtil.postOkHttpRequest(resUrl,requestBody,new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(gzcsearchtest.this,"搜索失败",Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                final String responseText=response.body().string();
+                Log.i("gzcsearchtest","response Data:"+responseText);
+                Restaurant res= Utility.handleRestaurantResponse(responseText);
+                Intent intent=new Intent(gzcsearchtest.this, SearchResult.class);
+                intent.putExtra("res_data",res);
+                startActivity(intent);
             }
         });
     }

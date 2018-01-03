@@ -1,10 +1,12 @@
 package com.a1141705068qq.main.gson;
 
+import java.io.Serializable;
+
 /**
  * Created by GGB on 2017/12/18.
  */
 
-public class Restaurant {
+public class Restaurant implements Serializable {
     public String res_id;
 
     public String res_name;

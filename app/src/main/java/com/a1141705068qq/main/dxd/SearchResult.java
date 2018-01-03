@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.a1141705068qq.class_one.R;
 import com.a1141705068qq.main.MainActivity;
 import com.a1141705068qq.main.Shop_Activity;
+import com.a1141705068qq.main.gson.Restaurant;
 import com.a1141705068qq.main.gzcsearchtest.gzcsearchtest;
 import com.yanghan.fragment_tab.fragmentOneNeed.ShopAdapter;
 
@@ -22,11 +23,13 @@ import java.util.Map;
 
 public class SearchResult extends AppCompatActivity {
     private List<Map<String, Object>> result;
+    private Restaurant res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_result);
+        res=(Restaurant)getIntent().getSerializableExtra("res_data");
         initView();
     }
 
@@ -47,34 +50,35 @@ public class SearchResult extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        initDish();
+        initDish(res);
         ShopAdapter adapter=new ShopAdapter(getApplicationContext(),result);
         ListView listView=(ListView)findViewById(R.id.list_view);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(SearchResult.this,Shop_Activity.class);
+                intent.putExtra("res_id",res.getRes_id());
+                startActivity(intent);
 
             }
         });
     }
 
     //搜索的结果 放入result中 待修改
-    private void initDish(){
+    private void initDish(Restaurant res){
         result=new ArrayList<Map<String,Object>>();
-        for(int i=0;i<3;i++){
             float a= (float) 3.6;
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("image_restaurant",R.drawable.hbg);
-            map.put("name_restaurant","麦加美");
+            map.put("image_restaurant",res.getRes_picture());
+            map.put("name_restaurant",res.getRes_name());
             map.put("start_send", "14:00");
-            map.put("send_fee", "介绍：" + "麦加美");
+            map.put("send_fee", "介绍：" + res.getRes_note());
             map.put("arrive_time_restaurant", "45分");
             map.put("ratingbar2", a);
             map.put("ratingbar1", 5);
             map.put("distant_restaurant", "1km");
             map.put("abc", R.drawable.img5);
             result.add(map);
-        }
     }
 }

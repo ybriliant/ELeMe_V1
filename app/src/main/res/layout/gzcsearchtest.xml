@@ -14,12 +14,5 @@
         app:search_hint="美食快搜">
 
     </com.czp.searchmlist.mSearchLayout>
-    <Button
-        android:id="@+id/jump"
-        android:text="search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="HardcodedText" />
-
 
 </LinearLayout>

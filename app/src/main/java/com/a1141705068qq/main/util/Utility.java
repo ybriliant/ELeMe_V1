@@ -3,6 +3,7 @@ package com.a1141705068qq.main.util;
 import android.text.TextUtils;
 
 import com.a1141705068qq.main.gson.Dish;
+import com.a1141705068qq.main.gson.Order;
 import com.a1141705068qq.main.gson.Restaurant;
 import com.a1141705068qq.main.gson.User;
 import com.google.gson.Gson;
@@ -84,6 +85,17 @@ public class Utility {
             return user;
         }catch (Exception e){
              e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static List<Order> handleOrderResponse(String jsonData){
+        try {
+            Gson gson=new Gson();
+            List<Order> orders=gson.fromJson(jsonData,new TypeToken<List<Order>>(){}.getType());
+            return orders;
+        }catch (Exception e){
+            e.printStackTrace();
         }
         return null;
     }
