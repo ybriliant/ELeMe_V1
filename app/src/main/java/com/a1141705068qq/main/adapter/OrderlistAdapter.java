@@ -74,7 +74,7 @@ public class OrderlistAdapter extends ArrayAdapter<Order>  {
                Random random=new Random();
                int res_id=random.nextInt(5)+1;
                Intent intent=new Intent(context,Shop_Activity.class);
-               intent.putExtra("res_id",String.valueOf(res_id));
+               intent.putExtra("res_id",res_id);
                context.startActivity(intent);
            }
        }));

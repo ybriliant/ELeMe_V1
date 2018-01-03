@@ -62,6 +62,7 @@ public class PayActivity extends Activity{
     private String data_name_restaurant;
     private String sum;
     private StringBuffer dishes=new StringBuffer();
+    private String user_loc;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,10 +83,15 @@ public class PayActivity extends Activity{
         user_name=upref.getString("user_name",null);
         user_phone=upref.getString("user_phone",null);
         user_id=upref.getString("user_id",null);
+        user_loc=upref.getString("user_location",null);
+        if(user_loc!=null) {
+            send_address.setText(user_loc);
+            send_address.setVisibility(View.VISIBLE);
+        }
         Intent intent = getIntent();
 
         data_name_restaurant = intent.getStringExtra("name_restaurant");
-        String data_send_adress = intent.getStringExtra("send_adress");
+
         if(user_name!=null)
             custom_name_phone.setText(user_name+":"+user_phone);
         Double data_sum_price_food = intent.getDoubleExtra("price_food",1.0);//黑栏目上的总价格
@@ -104,8 +110,6 @@ public class PayActivity extends Activity{
         name_restaurant.setText(data_name_restaurant);
         name_restaurant.setVisibility(View.VISIBLE);
 
-        send_address.setText(data_send_adress);
-        send_address.setVisibility(View.VISIBLE);
 
         long l = System.currentTimeMillis();
         Random rand = new Random();

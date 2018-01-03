@@ -175,7 +175,6 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
             public void onClick(View v) {
                 if(shopCart!=null && shopCart.getShoppingAccount()>0){
                     Intent payintent = new Intent(Shop_Activity.this,PayActivity.class);
-                    payintent.putExtra("send_adress","这里");
                     payintent.putExtra("num_of_food",shuliang);//红圈上的数字
                     payintent.putExtra("price_food",jiage);//黑栏目上的总价格
                     payintent.putExtra("name_restaurant",getnameof_restaurant());
