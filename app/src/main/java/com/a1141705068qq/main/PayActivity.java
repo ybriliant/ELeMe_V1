@@ -218,6 +218,9 @@ public class PayActivity extends Activity{
                             Toast.makeText(PayActivity.this,"支付成功",Toast.LENGTH_SHORT).show();
                         }
                     });
+                    Intent intent=new Intent();
+                    intent.putExtra("return_state",1);
+                    setResult(RESULT_OK,intent);
                     finish();
                 }else{
                     runOnUiThread(new Runnable() {

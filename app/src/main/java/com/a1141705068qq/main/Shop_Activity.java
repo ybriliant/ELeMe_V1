@@ -180,8 +180,8 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
                     payintent.putExtra("price_food",jiage);//黑栏目上的总价格
                     payintent.putExtra("name_restaurant",getnameof_restaurant());
                     payintent.putExtra("singlemessage",(Serializable)shoppingSinglepass);
-                    startActivity(payintent);
-                    //finish();
+                    startActivityForResult(payintent,1);
+
                 }
                 else{Toast.makeText(Shop_Activity.this,"您未点餐",Toast.LENGTH_SHORT).show();}
             }
@@ -425,5 +425,17 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
                 initAdapter();
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode,int resultCode,Intent data){
+        switch (requestCode){
+            case 1:
+            if(resultCode==RESULT_OK){
+                finish();
+            }
+            break;
+            default:
+        }
     }
 }
