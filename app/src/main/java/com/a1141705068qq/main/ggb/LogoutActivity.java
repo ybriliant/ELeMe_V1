@@ -1,6 +1,8 @@
 package com.a1141705068qq.main.ggb;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +30,8 @@ public class LogoutActivity extends AppCompatActivity implements View.OnClickLis
         TextView text2=(TextView)findViewById(R.id.text2);
         LinearLayout securuty=(LinearLayout)findViewById(R.id.security);
         LinearLayout tongyong=(LinearLayout)findViewById(R.id.tongyong);
+        LinearLayout guanyu=(LinearLayout)findViewById(R.id.guanyu);
+        guanyu.setOnClickListener(this);
         securuty.setOnClickListener(this);
         tongyong.setOnClickListener(this);
         logout.setOnClickListener(this);
@@ -54,6 +58,21 @@ public class LogoutActivity extends AppCompatActivity implements View.OnClickLis
                 intent=new Intent(this,User_infoActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.guanyu:
+                new AlertDialog.Builder(this)
+                        .setTitle("EleMe1.0")
+                        .setMessage("Founders:郭子琛，张杰，杨涵，杜晓东，李轩昂")
+                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .create().show();
             default:
                 break;
         }

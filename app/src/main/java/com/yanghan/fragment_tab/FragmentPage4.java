@@ -1,6 +1,7 @@
 package com.yanghan.fragment_tab;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,11 +9,13 @@ import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.a1141705068qq.class_one.R;
@@ -36,6 +39,8 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener{
 	private User user;
 	private String name;
 	private String phone;
+	private String user_location;
+	private LinearLayout location;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,15 +53,7 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener{
 		user_name=(TextView)view.findViewById(R.id.p4_user_name);
 		user_phone=(TextView)view.findViewById(R.id.p4_user_phone);
 		face=(ImageView)view.findViewById(R.id.p4_user_icon);
-		upref=getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
-		name=upref.getString("user_name",null);
-		phone=upref.getString("user_phone",null);
-		if(name!=null)
-			user_name.setText(name);
-		if(phone!=null){
-			user_phone.setText(phone.substring(0,3)+"****"+phone.substring(7,11));
-			Glide.with(this).load("http://67.216.210.216/upload/"+upref.getString("user_id",null)+".jpg"+"?").diskCacheStrategy( DiskCacheStrategy.NONE ).skipMemoryCache( true ).into(face);
-		}
+		location=(LinearLayout)view.findViewById(R.id.location);
 		return view;
 	}
 
@@ -64,6 +61,18 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener{
 		super.onActivityCreated(savedInstanceState);
 		user_info.setOnClickListener(this);
 		user_setting.setOnClickListener(this);
+		location.setOnClickListener(this);
+		user_note.setOnClickListener(this);
+		upref=getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
+		name=upref.getString("user_name",null);
+		phone=upref.getString("user_phone",null);
+		user_location=upref.getString("user_location",null);
+		if(name!=null)
+		user_name.setText(name);
+		if(phone!=null){
+			user_phone.setText(phone.substring(0,3)+"****"+phone.substring(7,11));
+			Glide.with(this).load("http://67.216.210.216/upload/"+upref.getString("user_id",null)+".jpg"+"?").diskCacheStrategy( DiskCacheStrategy.NONE ).skipMemoryCache( true ).into(face);
+		}
 	}
 
 	@Override
@@ -77,7 +86,27 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener{
 			case R.id.user_info:
 				intent=new Intent(getActivity(), User_infoActivity.class);
 				startActivity(intent);
+				break;
 			case R.id.user_note:
+				intent=new Intent(getActivity(), User_infoActivity.class);
+				startActivity(intent);
+				break;
+			case R.id.location:
+				new AlertDialog.Builder(getContext())
+					.setTitle("送货地址")
+					.setMessage(user_location)
+					.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+						}
+					})
+					.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+						}
+					})
+					.create().show();
+				break;
 			default:
 				break;
 		}
