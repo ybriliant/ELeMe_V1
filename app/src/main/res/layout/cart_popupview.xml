@@ -80,7 +80,7 @@
             android:visibility="gone"
             android:layout_marginLeft="@dimen/shopping_cart_total_price_left_magrin"/>
         <Button
-            android:id="@+id/pay_right_away2"
+            android:id="@+id/pay_right_away_two"
             android:background="@color/green"
             android:text="@string/quzhifu"
             android:textColor="@color/white"

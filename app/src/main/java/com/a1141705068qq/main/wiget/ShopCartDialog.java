@@ -29,7 +29,7 @@ public class ShopCartDialog extends Dialog implements View.OnClickListener,ShopC
     private LinearLayout linearLayout,bottomLayout,clearLayout;
     private FrameLayout shopingcartLayout;
     private ShopCart shopCart;
-    private Button pay_right_way2;
+    private Button pay_right_way_two;
     private TextView totalPriceTextView;
     private TextView totalPriceNumTextView;
     private Button pay_right_away;
@@ -61,7 +61,7 @@ public class ShopCartDialog extends Dialog implements View.OnClickListener,ShopC
         recyclerView = (RecyclerView)findViewById(R.id.recycleview);
         shopingcartLayout.setOnClickListener(this);
         bottomLayout.setOnClickListener(this);
-        pay_right_way2 = (Button)findViewById(R.id.pay_right_away2);
+        pay_right_way_two = (Button)findViewById(R.id.pay_right_away_two);
         clearLayout.setOnClickListener(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         dishAdapter = new PopupDishAdapter(getContext(),shopCart);
@@ -99,6 +99,11 @@ public class ShopCartDialog extends Dialog implements View.OnClickListener,ShopC
 
     public int getNum_kind(){
         return num_kind;
+    }
+
+    public Button getPay_right_way_two(){
+        Button b= (Button) findViewById(R.id.pay_right_away_two);
+        return b;
     }
 
     @Override

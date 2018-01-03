@@ -9,6 +9,7 @@ import android.support.design.widget.CoordinatorLayout;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +46,7 @@ public class PayActivity extends Activity{
     private TextView arrive_time;
     private TextView all_fee_two;
     private Button payfinal;
+    private ImageButton back;
     private LinearLayout pay_menu_object;
     private View view_add;
     private TextView custom_name_phone;
@@ -74,6 +76,7 @@ public class PayActivity extends Activity{
         arrive_time = (TextView)findViewById(R.id.arrive_time);
         all_fee = (TextView)findViewById(R.id.all_fee);//
         all_fee_two = (TextView)findViewById(R.id.all_fee_two);//
+        back = (ImageButton) findViewById(R.id.activity_pay_back);
         payfinal = (Button)findViewById(R.id.payfinal);
         upref=getSharedPreferences("user", Context.MODE_PRIVATE);
         user_name=upref.getString("user_name",null);
@@ -135,6 +138,13 @@ public class PayActivity extends Activity{
             @Override
             public void onClick(View v) {
                 sendRequset();
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

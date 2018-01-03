@@ -188,6 +188,9 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
         });
     }
 
+    public void TouchButton(){
+        pay_right_away.performClick();
+    }
 
     private String getnameof_restaurant(){
         Intent intent = getIntent();
@@ -373,6 +376,13 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
             params.gravity = Gravity.BOTTOM;
             params.dimAmount =0.5f;
             window.setAttributes(params);
+
+            dialog.getPay_right_way_two().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    TouchButton();
+                }
+            });
         }
     }
 
