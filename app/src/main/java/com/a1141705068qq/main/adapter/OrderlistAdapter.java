@@ -66,7 +66,7 @@ public class OrderlistAdapter extends ArrayAdapter<Order>  {
        dateNowStr = randomDate("20170101", "20171231");
        item_time.setText(dateNowStr);
        item_dish.setText(order.getDis_name());
-       item_price.setText("￥:"+order.getOrder_sum());
+       item_price.setText("￥"+order.getOrder_sum());
        order_confirm.setOnClickListener((new View.OnClickListener() {
 
            @Override

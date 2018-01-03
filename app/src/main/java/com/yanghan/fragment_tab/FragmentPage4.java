@@ -48,6 +48,15 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener{
 		user_name=(TextView)view.findViewById(R.id.p4_user_name);
 		user_phone=(TextView)view.findViewById(R.id.p4_user_phone);
 		face=(ImageView)view.findViewById(R.id.p4_user_icon);
+		upref=getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
+		name=upref.getString("user_name",null);
+		phone=upref.getString("user_phone",null);
+		if(name!=null)
+			user_name.setText(name);
+		if(phone!=null){
+			user_phone.setText(phone.substring(0,3)+"****"+phone.substring(7,11));
+			Glide.with(this).load("http://67.216.210.216/upload/"+upref.getString("user_id",null)+".jpg"+"?").diskCacheStrategy( DiskCacheStrategy.NONE ).skipMemoryCache( true ).into(face);
+		}
 		return view;
 	}
 
@@ -55,15 +64,6 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener{
 		super.onActivityCreated(savedInstanceState);
 		user_info.setOnClickListener(this);
 		user_setting.setOnClickListener(this);
-		upref=getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
-		name=upref.getString("user_name",null);
-		phone=upref.getString("user_phone",null);
-		if(name!=null)
-		user_name.setText(name);
-		if(phone!=null){
-			user_phone.setText(phone.substring(0,3)+"****"+phone.substring(7,11));
-			Glide.with(this).load("http://67.216.210.216/upload/"+upref.getString("user_id",null)+".jpg"+"?").diskCacheStrategy( DiskCacheStrategy.NONE ).skipMemoryCache( true ).into(face);
-		}
 	}
 
 	@Override

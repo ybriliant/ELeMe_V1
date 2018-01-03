@@ -95,6 +95,7 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
         sendRequest(res_id);
     }
 
+
     private void initView(){
         mainLayout = (RelativeLayout)findViewById(R.id.main_layout);
         leftMenu = (RecyclerView)findViewById(R.id.left_menu);

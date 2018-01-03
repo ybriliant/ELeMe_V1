@@ -19,3 +19,4 @@ public class SearchLayoutFragment extends android.support.v4.app.Fragment {
         return view;
     }
 }
+

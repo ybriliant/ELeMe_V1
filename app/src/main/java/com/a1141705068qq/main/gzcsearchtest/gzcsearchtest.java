@@ -3,6 +3,9 @@ package com.a1141705068qq.main.gzcsearchtest;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -40,6 +43,12 @@ public class gzcsearchtest extends AppCompatActivity {
         setContentView(R.layout.gzcsearchtest);
         msearchLy = (mSearchLayout)findViewById(R.id.msearchlayout);
         initData();
+    }
+    private void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        FragmentTransaction transaction=fragmentManager.beginTransaction();
+        transaction.replace(R.id.frame_layout,fragment);
+        transaction.commit();
     }
 
     protected void initData() {

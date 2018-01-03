@@ -16,7 +16,7 @@
         android:layout_weight="1"/>
     <TextView
 
-        android:gravity="center"
+        android:gravity="left"
         android:id="@+id/cost_text"
         android:textColor="@color/red"
         android:layout_width="match_parent"
