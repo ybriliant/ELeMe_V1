@@ -181,7 +181,7 @@ public class Shop_Activity extends Activity implements LeftMenuAdapter.onItemSel
                     payintent.putExtra("name_restaurant",getnameof_restaurant());
                     payintent.putExtra("singlemessage",(Serializable)shoppingSinglepass);
                     startActivity(payintent);
-                    finish();
+                    //finish();
                 }
                 else{Toast.makeText(Shop_Activity.this,"您未点餐",Toast.LENGTH_SHORT).show();}
             }
