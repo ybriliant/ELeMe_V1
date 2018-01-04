@@ -1,6 +1,20 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'demo'
+            keyPassword '123456'
+            storeFile file('C:/Users/46637/demo.jks')
+            storePassword '123456'
+        }
+        config1 {
+            keyAlias 'demo'
+            keyPassword '123456'
+            storeFile file('C:/Users/46637/demo.jks')
+            storePassword '123456'
+        }
+    }
     aaptOptions.cruncherEnabled = false
     aaptOptions.useNewCruncher = false
     compileSdkVersion 26
@@ -17,6 +31,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
