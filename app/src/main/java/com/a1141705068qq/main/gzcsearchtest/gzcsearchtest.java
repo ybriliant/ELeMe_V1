@@ -101,10 +101,19 @@ public class gzcsearchtest extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 final String responseText=response.body().string();
                 Log.i("gzcsearchtest","response Data:"+responseText);
-                Restaurant res= Utility.handleRestaurantResponse(responseText);
-                Intent intent=new Intent(gzcsearchtest.this, SearchResult.class);
-                intent.putExtra("res_data",res);
-                startActivity(intent);
+                if(responseText.equals("[]")){
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(gzcsearchtest.this,"搜索关键字不存在",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }else {
+                    Restaurant res = Utility.handleRestaurantResponse(responseText);
+                    Intent intent = new Intent(gzcsearchtest.this, SearchResult.class);
+                    intent.putExtra("res_data", res);
+                    startActivity(intent);
+                }
             }
         });
     }

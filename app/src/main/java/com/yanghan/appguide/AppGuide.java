@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 
+import com.a1141705068qq.main.LoginActivity;
 import com.a1141705068qq.main.MainActivity;
 import com.a1141705068qq.class_one.R;
 
@@ -63,7 +64,7 @@ public class AppGuide extends FragmentActivity implements OnClickListener,OnPage
 		switch (v.getId()) {
 			//开始体验的按钮
 		case R.id.btnStart:
-			Intent intent=new Intent(this, MainActivity.class);
+			Intent intent=new Intent(this, LoginActivity.class);
 			startActivity(intent);
 			this.finish();
 			break;
