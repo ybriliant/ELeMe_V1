@@ -165,8 +165,10 @@
                     android:background="@color/nocolor"/>
             </LinearLayout>
 
-            <include layout="@layout/layout_line1"/>
-            <include layout="@layout/layout_line2"/>
+            <include layout="@layout/layout_line1"
+                android:id="@+id/layout_line1"/>
+            <include layout="@layout/layout_line2"
+                android:id="@+id/layout_line2"/>
 
             <TextView
                 android:id="@+id/aaa"

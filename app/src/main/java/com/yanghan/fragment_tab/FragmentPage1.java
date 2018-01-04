@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -33,6 +34,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
@@ -53,6 +55,8 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener{
 	private Restaurant res2;
 	private TextView search_tv;
 	private List<Restaurant> restaurants;
+	private LinearLayout layout_line1;
+	private LinearLayout layout_line2;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
@@ -66,6 +70,8 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener{
 		listView=(ListView)view.findViewById(R.id.restaurant_list);
 		search_tv=(TextView)view.findViewById(R.id.search);
 		search_tv.setOnClickListener(this);
+		layout_line1=(LinearLayout)view.findViewById(R.id.layout_line1);
+		layout_line2=(LinearLayout)view.findViewById(R.id.layout_line2);
 		sendRequest();
 	}
 
@@ -74,6 +80,14 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener{
 		switch (v.getId()){
 			case R.id.search:
 				Intent intent=new Intent(getActivity(),gzcsearchtest.class);
+				startActivity(intent);
+				break;
+			case R.id.layout_line1:
+			case R.id.layout_line2:
+				Random random=new Random();
+				int res_id=random.nextInt(5)+1;
+				intent=new Intent(getActivity(),Shop_Activity.class);
+				intent.putExtra("res_id",res_id);
 				startActivity(intent);
 				break;
 			default:

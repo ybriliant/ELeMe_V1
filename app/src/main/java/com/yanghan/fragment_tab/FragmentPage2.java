@@ -1,12 +1,14 @@
 package com.yanghan.fragment_tab;
 
 import android.app.ActivityManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.a1141705068qq.class_one.R;
@@ -24,15 +26,28 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class FragmentPage2 extends Fragment{
+public class FragmentPage2 extends Fragment implements View.OnClickListener{
 	private View view;
 
+	private LinearLayout layout1;
+	private LinearLayout layout2;
+	private LinearLayout layout3;
+	private LinearLayout layout4;
 	private List<Dish> mdishes;
 
 	private List<Dish> ndishes;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {	
 		view=inflater.inflate(R.layout.tab_fragment2, null);
+		layout1=(LinearLayout)view.findViewById(R.id.layout1);
+		layout2=(LinearLayout)view.findViewById(R.id.layout2);
+		layout3=(LinearLayout)view.findViewById(R.id.layout3);
+		layout4=(LinearLayout)view.findViewById(R.id.layout4);
+		layout1.setOnClickListener(this);
+		layout2.setOnClickListener(this);
+		layout3.setOnClickListener(this);
+		layout4.setOnClickListener(this);
 		return view;
 	}
 
@@ -44,6 +59,24 @@ public class FragmentPage2 extends Fragment{
 		if(id>0&&id<5)
 			id++;
 		sendRequest(id,2);
+	}
+
+	@Override
+	public void onClick(View v){
+		switch (v.getId()){
+			case R.id.layout1:
+			case R.id.layout2:
+			case R.id.layout3:
+			case R.id.layout4:
+				Random random=new Random();
+				int res_id=random.nextInt(5)+1;
+				Intent intent=new Intent(getActivity(),Shop_Activity.class);
+				intent.putExtra("res_id",res_id);
+				startActivity(intent);
+				break;
+			default:
+				break;
+		}
 	}
 
 	public void sendRequest(int id,final int tag){

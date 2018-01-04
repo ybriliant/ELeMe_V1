@@ -95,6 +95,7 @@
                 tools:ignore="ContentDescription" />
 
             <LinearLayout
+                android:id="@+id/layout1"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:orientation="vertical">
@@ -140,6 +141,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layout2"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:orientation="vertical">
@@ -185,6 +187,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layout3"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:orientation="vertical">
@@ -228,6 +231,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layout4"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:orientation="vertical">
